@@ -1,0 +1,10 @@
+.avatar {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  line-height: 1;
+  object-fit: cover;
+  padding-top: 1px;
+}

@@ -1,0 +1,118 @@
+{
+  "name": "granola-clone",
+  "productName": "Granola Clone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI notepad for meetings: local-first Granola clone with a self-hosted transcription backend.",
+  "main": "./out/main/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "npm run build && playwright test --project=e2e",
+    "helper": "../native/build.sh && mkdir -p resources/bin && cp ../native/dist/granola-helper resources/bin/",
+    "dist": "npm run build && electron-builder --mac --arm64",
+    "format": "prettier --write src test",
+    "format:check": "prettier --check src test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "@google-cloud/speech": "^8.1.0",
+    "google-auth-library": "^11.1.0",
+    "ws": "^8.21.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource/ibm-plex-serif": "^5.3.0",
+    "@playwright/test": "^1.63.0",
+    "@tanstack/react-query": "^5.103.2",
+    "@tiptap/extension-list": "^3.31.3",
+    "@tiptap/extensions": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/react": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "@tiptap/suggestion": "^3.31.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "44.4.5",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "lucide-react": "^1.48.0",
+    "marked": "^18.0.14",
+    "prettier": "3.9.9",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^7.3.6",
+    "vitest": "^5.0.1",
+    "zustand": "^5.0.15"
+  },
+  "build": {
+    "appId": "dev.granola-clone.app",
+    "productName": "Granola Clone",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/bin",
+        "to": "bin"
+      },
+      {
+        "from": "resources",
+        "to": ".",
+        "filter": [
+          "trayTemplate*.png",
+          "meeting-*.png"
+        ]
+      }
+    ],
+    "protocols": [
+      {
+        "name": "Granola Clone note link",
+        "schemes": [
+          "granola-clone"
+        ]
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dir",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "resources/icon.icns",
+      "category": "public.app-category.productivity",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Granola transcribes what you say in meetings.",
+        "NSAudioCaptureUsageDescription": "Granola transcribes the other people on your calls from your computer's audio.",
+        "NSCalendarsFullAccessUsageDescription": "Granola shows your upcoming meetings and who is in them.",
+        "NSCalendarsUsageDescription": "Granola shows your upcoming meetings and who is in them."
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.dock {
+  position: absolute;
+  left: 50%;
+  bottom: 27.5px;
+  transform: translateX(-50%);
+  width: 671px;
+  max-width: calc(100% - 32px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 11px;
+}
+
+.bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  padding: 0 10px 0 20px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  box-shadow:
+    0 0 0 0.5px var(--border-hairline),
+    0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: none;
+  border: 0;
+  outline: none;
+  color: var(--ink-primary);
+  font-size: var(--text-md);
+}
+
+.input::placeholder {
+  color: var(--ink-secondary-strong);
+}
+
+.recipe {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 14px 0 11px;
+  border-radius: var(--radius-pill);
+  background: var(--fill-highlight);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  color: var(--fill-primary);
+  font-size: var(--text-base);
+}
+
+:global(.light) .recipe {
+  color: var(--ink-primary);
+}
+
+.recipe svg {
+  color: var(--ink-secondary-strong);
+}
+
+.recipe:hover {
+  background: var(--fill-highlight-strong);
+}
+
+.send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--fill-primary);
+  color: var(--fill-primary-ink);
+}

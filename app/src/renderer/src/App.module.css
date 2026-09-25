@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-window);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  z-index: 1100;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-tooltip);
+  color: #fcfcf8;
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-popover);
+  animation: toast 2.4s var(--ease) forwards;
+  pointer-events: none;
+}
+
+@keyframes toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+  8%,
+  85% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}

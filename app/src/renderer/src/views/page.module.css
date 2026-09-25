@@ -1,0 +1,39 @@
+/* Shared page scaffolding for scrolling views with a centred content column. */
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  padding: 10px 0 140px;
+}
+
+.column {
+  width: var(--content-width);
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 20px;
+  padding: 0 7.5px;
+  font-size: var(--text-display);
+  line-height: 34px;
+  color: var(--ink-primary);
+}
+
+/* Full-width table pages (People, Companies). */
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 11.5px 0 16.5px;
+  margin-top: 1px;
+}
+
+.tableTitle {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--ink-primary);
+}

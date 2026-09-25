@@ -1,0 +1,30 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 118px;
+  padding-right: 10px;
+}
+
+.art {
+  width: 90px;
+  height: auto;
+  margin-bottom: 27px;
+}
+
+:global(.light) .art {
+  filter: invert(0.92);
+}
+
+.title {
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.subtitle {
+  margin-top: 4px;
+  color: var(--ink-tertiary);
+  font-size: var(--text-base);
+}

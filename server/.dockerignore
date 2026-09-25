@@ -1,0 +1,7 @@
+.venv
+.env.local
+tests
+eval
+scripts
+**/__pycache__
+ollama

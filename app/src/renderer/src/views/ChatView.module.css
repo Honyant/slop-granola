@@ -1,0 +1,205 @@
+.landing {
+  width: 624px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+  padding-top: 107px;
+  transform: translateX(-2px);
+}
+
+.greeting {
+  margin: 0 0 22px 8px;
+  font-size: var(--text-display);
+  line-height: 34px;
+  color: var(--ink-primary);
+}
+
+.composer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  background: var(--bg-elevated);
+  box-shadow:
+    inset 0 0 0 0.5px var(--border-hairline),
+    0 4px 18px rgba(0, 0, 0, 0.18);
+  padding: 13px 11px 7px 16px;
+}
+
+.textarea {
+  resize: none;
+  border: 0;
+  outline: none;
+  background: none;
+  color: var(--ink-primary);
+  font-size: var(--text-lg);
+  line-height: 20px;
+  min-height: 22px;
+  max-height: 200px;
+  field-sizing: content;
+}
+
+.textarea::placeholder {
+  color: var(--ink-secondary-strong);
+}
+
+.composerFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footerIcon {
+  display: inline-flex;
+  color: var(--ink-secondary-strong);
+  padding: 2px;
+}
+
+.model {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-base);
+}
+
+.flex {
+  flex: 1;
+}
+
+.micButton,
+.sendButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.micButton {
+  background: var(--fill-highlight);
+  color: var(--ink-secondary-strong);
+}
+
+.micButton:hover {
+  color: var(--ink-primary);
+}
+
+.micButton[data-listening] {
+  background: var(--fill-accent);
+  color: #fcfcf8;
+  animation: listening 1.4s ease-in-out infinite;
+}
+
+@keyframes listening {
+  50% {
+    box-shadow: 0 0 0 5px #5b6f0040;
+  }
+}
+
+.interim {
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink-tertiary);
+  font-size: var(--text-sm);
+}
+
+.sendButton {
+  background: var(--fill-primary);
+  color: var(--fill-primary-ink);
+}
+
+.recipesLabel {
+  margin: 38px 0 12px 8px;
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-base);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 7.5px;
+  padding-left: 7.5px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  padding: 0 10px 0 7px;
+  border-radius: var(--radius-md);
+  background: var(--fill-highlight);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  color: var(--fill-primary);
+  font-size: var(--text-base);
+}
+
+:global(.light) .chip {
+  color: var(--ink-primary);
+}
+
+.chip svg {
+  color: var(--ink-secondary-strong);
+}
+
+.chip:hover {
+  background: var(--fill-highlight-strong);
+}
+
+.threads {
+  display: flex;
+  flex-direction: column;
+}
+
+.threadRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.threadRow:hover {
+  background: var(--fill-highlight);
+}
+
+.threadRowTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.threadRowDate {
+  color: var(--ink-tertiary);
+  font-size: var(--text-sm);
+}
+
+.threadPage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.threadTitle {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.threadComposer {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 624px;
+  max-width: calc(100% - 48px);
+}

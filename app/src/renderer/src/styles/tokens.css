@@ -1,0 +1,121 @@
+/*
+ * Design tokens. Values are Granola's "oats" palette (measured from the
+ * reference screenshots and matching Granola's own stylesheet). Components use
+ * only the semantic names below, never raw colours, so both themes come free.
+ */
+:root {
+  /*
+   * Granola's UI face (KMR Melange Grotesk) is commercial. Inter Tight is the
+   * closest free match: same skeleton as Granola's own Inter fallback, with the
+   * tighter set-width that Melange has. Inter stays as the fallback for glyphs.
+   */
+  --font-body: 'Inter Tight Variable', 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'IBM Plex Serif', ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 16px;
+  --text-editor: 16px;
+  --text-display: 28px;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-panel: 22px;
+  --radius-pill: 999px;
+
+  --sidebar-width: 190px;
+  --titlebar-height: 44px;
+  --content-width: 624px;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+:root,
+:root.light {
+  --bg-window: #f7f7f2;
+  --bg-sidebar: #f2f2ec;
+  --bg-surface: #fcfcf8;
+  --bg-raised: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-chip: #f2f2ec;
+  --bg-tile: #eaebe5;
+  --bg-tooltip: #363635;
+  --bg-bubble-me: #eaebe5;
+  --bg-overlay-panel: #ffffffee;
+
+  --ink-primary: #292929;
+  --ink-strong: #212121;
+  --ink-secondary-strong: #4e4d4b;
+  --ink-secondary: #72726e;
+  --ink-tertiary: #acada8;
+  --ink-inverse: #fcfcf8;
+  --ink-accent: #5b6f00;
+  --ink-accent-strong: #5b6f00;
+  --ink-danger: #bd4a30;
+  /* Named far-side speaker in transcripts. */
+  --ink-speaker: #8a7419;
+
+  --fill-highlight: #625a220f;
+  --fill-highlight-strong: #56512e1f;
+  --fill-primary: #292929;
+  --fill-primary-ink: #fcfcf8;
+  --fill-accent: #5b6f00;
+  --fill-toggle-off: #d5d5d2;
+
+  --border-hairline: #56512e1f;
+  --border-strong: #47432a33;
+  --border-focus: #788c1599;
+  --dancing-bars: #74bd00;
+
+  --shadow-popover: 0 8px 28px rgba(33, 33, 33, 0.14), 0 0 0 0.5px var(--border-strong);
+  --shadow-panel: 0 16px 48px rgba(33, 33, 33, 0.16);
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg-window: #292929;
+  --bg-sidebar: #212121;
+  --bg-surface: #292929;
+  --bg-raised: #313130;
+  --bg-elevated: #363635;
+  --bg-input: #363635;
+  --bg-chip: #3e3e3d;
+  --bg-tile: #4e4d4b;
+  --bg-tooltip: #363635;
+  --bg-bubble-me: #212121;
+  --bg-overlay-panel: #212121f2;
+
+  --ink-primary: #fcfcf8;
+  --ink-strong: #ffffff;
+  --ink-secondary-strong: #acada8;
+  --ink-secondary: #9e9e99;
+  --ink-tertiary: #818179;
+  --ink-inverse: #212121;
+  --ink-accent: #788c15;
+  --ink-accent-strong: #b2c248;
+  --ink-danger: #ec7558;
+  --ink-speaker: #d8c56c;
+
+  --fill-highlight: #ffffff0f;
+  --fill-highlight-strong: #ffffff1c;
+  --fill-primary: #eaebe5;
+  --fill-primary-ink: #212121;
+  --fill-accent: #5b6f00;
+  --fill-toggle-off: #4e4d4b;
+
+  --border-hairline: #ffffff17;
+  --border-strong: #ffffff26;
+  --border-focus: #b2c24899;
+  --dancing-bars: #74bd00;
+
+  --shadow-popover: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 0 0.5px #ffffff1f;
+  --shadow-panel: 0 18px 50px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}

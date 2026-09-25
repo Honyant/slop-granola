@@ -1,0 +1,3035 @@
+{
+  "model": "qwen3-asr-1.7b",
+  "model_id": "Qwen/Qwen3-ASR-1.7B-hf",
+  "n_utterances": {
+    "ami": 300,
+    "earnings22": 200
+  },
+  "wer": {
+    "ami": 10.311193683232698,
+    "earnings22": 9.74188176519567
+  },
+  "wer_all": 9.954829742877,
+  "formatted_wer": {
+    "ami": 25.879099170288423,
+    "earnings22": 25.095742284298268
+  },
+  "rtfx": 20.338717162938362,
+  "latency_ms_by_seconds": {
+    "1s": 81.64224796928465,
+    "3s": 103.80508191883564,
+    "6s": 141.52690791524947,
+    "12s": 367.45174904353917,
+    "25s": 689.3813260830939
+  },
+  "utterance_latency_ms_p50": 134.83328698202968,
+  "utterance_latency_ms_p90": 266.22283505275846,
+  "peak_vram_gib": 4.050960063934326,
+  "weights_vram_gib": 3.7962327003479004,
+  "frac_hyps_with_uppercase": 0.986,
+  "frac_hyps_with_punctuation": 0.99,
+  "silence_output": "So, I'm going to be talking about the different types of business.",
+  "noise_output": "Okay.",
+  "hypotheses": [
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0084758_0084993",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003a_H01_MTD011UID_0135736_0135758",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "\u55ef\u3002"
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0119110_0119389",
+      "corpus": "ami",
+      "ref": "Something like that.",
+      "hyp": "Something like that."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0163581_0163611",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_ES2004b_H02_MEE014_0165894_0166237",
+      "corpus": "ami",
+      "ref": "And you wouldn't you wouldn't need uh a whole host of extra buttons for that,",
+      "hyp": "And you wouldn't, you wouldn't need a a whole host of extra buttons for that."
+    },
+    {
+      "id": "AMI_ES2004c_H00_MEO015_0212288_0212491",
+      "corpus": "ami",
+      "ref": "Acupressure, you could talk of acupressures.",
+      "hyp": "Acupressure. You could talk of acupressure."
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0176567_0176635",
+      "corpus": "ami",
+      "ref": "Oh God.",
+      "hyp": "Oh God."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0139563_0139867",
+      "corpus": "ami",
+      "ref": "But th um I think we can then keep the single curved one.",
+      "hyp": "But I think we can then keep the single curved one."
+    },
+    {
+      "id": "AMI_IS1009c_H03_FIO089_0157714_0157817",
+      "corpus": "ami",
+      "ref": "Distance problem?",
+      "hyp": "Distance problem."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0163561_0163750",
+      "corpus": "ami",
+      "ref": "'Cause I'm only gonna do this if I've got time anyway.",
+      "hyp": "Because I'm only going to do this if I've got time, anyway."
+    },
+    {
+      "id": "AMI_EN2002b_H00_FEO070_0066765_0066801",
+      "corpus": "ami",
+      "ref": "We'll see.",
+      "hyp": "Let's see."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0147455_0147639",
+      "corpus": "ami",
+      "ref": "So good luck.",
+      "hyp": "So good luck."
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0186781_0187146",
+      "corpus": "ami",
+      "ref": "But then that's probably pretty much the same for the same group.",
+      "hyp": "Then that's probably pretty much the same for the same group."
+    },
+    {
+      "id": "AMI_ES2004c_H03_FEE016_0027029_0028144",
+      "corpus": "ami",
+      "ref": "Uh so the general findings from that was uh in the market trends the most important aspect for remote controls were people want a fancy look and feel",
+      "hyp": "So the general findings from that was that in the market trends, the most important aspects for remote controls were: people want a fancy look and feel."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0146395_0146789",
+      "corpus": "ami",
+      "ref": "Um okay so on shape",
+      "hyp": "Okay, so on shape."
+    },
+    {
+      "id": "AMI_IS1009d_H00_FIE088_0087996_0088686",
+      "corpus": "ami",
+      "ref": "Okay now on the financing we bring up the mm there it is.",
+      "hyp": "Okay, now on the financing, we bring up the. There it is."
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0070141_0071209",
+      "corpus": "ami",
+      "ref": "Just yeah, well it just um when he pulls up the segments um part of that, one of the f one of the attributes you do get attributes.",
+      "hyp": "Just yeah, we're just when he pulls up the segments. Part of that, one of the one of the attributes. If you do get attributes, call them ethical."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0019193_0019284",
+      "corpus": "ami",
+      "ref": "Yes if you feel",
+      "hyp": "Yes, if you feel."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0071616_0071774",
+      "corpus": "ami",
+      "ref": "Expensive as well.",
+      "hyp": "Expensive as well."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0243727_0243778",
+      "corpus": "ami",
+      "ref": "I don't know.",
+      "hyp": "I don't know."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0176802_0177381",
+      "corpus": "ami",
+      "ref": "Well y y this this is the icon by the way.",
+      "hyp": "Well, this this is the icon, by the way."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0120589_0120727",
+      "corpus": "ami",
+      "ref": "And that would give us the whole weekend.",
+      "hyp": "And that would give us the whole weekend."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0069893_0070476",
+      "corpus": "ami",
+      "ref": "But I think because we have the advanced chip we can just count this as one button.",
+      "hyp": "But I think because we have the advanced chip, we can just count this as one button."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0154128_0154590",
+      "corpus": "ami",
+      "ref": "But we can go on with the project evaluation.",
+      "hyp": "But we can go on with the project evaluation."
+    },
+    {
+      "id": "AMI_EN2002a_H02_FEO072_0066465_0066707",
+      "corpus": "ami",
+      "ref": "I was just thinking of tab.",
+      "hyp": "I was just thinking of tab."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0050901_0051126",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0036329_0036361",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0049225_0049278",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0041916_0042758",
+      "corpus": "ami",
+      "ref": "Now, uh the discussion I guess is um does anyone of you have experience with remote control?",
+      "hyp": "Now the discussion, I guess, is: Does any one of you have experience with remote control?"
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0198468_0198501",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002a_H02_FEO072_0028408_0028527",
+      "corpus": "ami",
+      "ref": "Or is that too much I mean?",
+      "hyp": "Was that too much? I mean."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0130181_0130389",
+      "corpus": "ami",
+      "ref": "It's only only gonna be half an hour maybe.",
+      "hyp": "It's only only gonna be half an hour, maybe."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0061732_0062279",
+      "corpus": "ami",
+      "ref": "and so just say one of the boxes just explains does this is my top five dialogue acts for the speaker",
+      "hyp": "So just say one of the boxes. Just explain. This is my top five dialogue X for the speaker."
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0177802_0177837",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004a_H01_FEE013_0010814_0011589",
+      "corpus": "ami",
+      "ref": "discuss our own ideas and everything um and we've got twenty five minutes to do that, as far as I can understand.",
+      "hyp": "Discuss our own ideas and everything, and we've got twenty-five minutes to do that. As far as I can understand."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0257894_0257903",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0031550_0032074",
+      "corpus": "ami",
+      "ref": "Which are not really used very frequently, but are still considered to be of some importance.",
+      "hyp": "Which are not really used very frequently, but are still considered to be of some importance."
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0046374_0046439",
+      "corpus": "ami",
+      "ref": "Whoa.",
+      "hyp": "Whoa."
+    },
+    {
+      "id": "AMI_ES2004a_H02_MEE014_0098549_0098880",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0212956_0213004",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009d_H00_FIE088_0183441_0183527",
+      "corpus": "ami",
+      "ref": "I think we did.",
+      "hyp": "I think we did."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0013287_0013804",
+      "corpus": "ami",
+      "ref": "Uh we get ins each of us will get instructions and we'll take it from there.",
+      "hyp": "We get in. Each of us will get instructions, and we'll take it from there."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0147775_0147937",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Hehehe."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0017326_0017558",
+      "corpus": "ami",
+      "ref": "Mm g yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003d_H03_MTD012ME_0180138_0180230",
+      "corpus": "ami",
+      "ref": "I think it doesn't.",
+      "hyp": "I think it doesn't."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0126030_0126220",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H00_MEO015_0035666_0035739",
+      "corpus": "ami",
+      "ref": "This one right here.",
+      "hyp": "This one right here."
+    },
+    {
+      "id": "AMI_TS3003d_H02_MTD0010ID_0123433_0123820",
+      "corpus": "ami",
+      "ref": "If you press the volume button you can control the volume with the scroll-wheel.",
+      "hyp": "If you press the volume button, you can control the volume with the scroll wheel."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0169161_0170001",
+      "corpus": "ami",
+      "ref": "That is true but I think there's simply not much to gain on the competition when you when you're making a remote control only for to operate only the T. V. .",
+      "hyp": "That is true, but I think there's simply not much to gain on the competition when you, when you're making a remote control only for to operate only the TV."
+    },
+    {
+      "id": "AMI_EN2002a_H02_FEO072_0178441_0178929",
+      "corpus": "ami",
+      "ref": "and then then we could discuss it next meeting which options we really wanna include?",
+      "hyp": "And then, then we could discuss at next meeting which options we really want to include."
+    },
+    {
+      "id": "AMI_IS1009b_H01_FIO087_0120107_0120208",
+      "corpus": "ami",
+      "ref": "Yes.",
+      "hyp": "Yes."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0174026_0174053",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0186216_0186236",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0184614_0184842",
+      "corpus": "ami",
+      "ref": "rather than having to email it, yeah.",
+      "hyp": "Rather than having to email you."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0026214_0026708",
+      "corpus": "ami",
+      "ref": "Or something.",
+      "hyp": "Or something."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0071373_0072234",
+      "corpus": "ami",
+      "ref": "I don't know, twenty, is that the ho what percentage of his speech is joke, or w how what percentage of the jokes",
+      "hyp": "I don't know twenty. Is that the what percentage of his speech is joke, or what percentage of the jokes?"
+    },
+    {
+      "id": "AMI_ES2004a_H03_FEE016_0002515_0002683",
+      "corpus": "ami",
+      "ref": "So we've got both of these clipped on?",
+      "hyp": "So we've got both of these clipped on."
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0155203_0155496",
+      "corpus": "ami",
+      "ref": "the type of company that we're working for as well.",
+      "hyp": "The type of company that we're working for, as well."
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0028865_0029045",
+      "corpus": "ami",
+      "ref": "Yeah, you pretend.",
+      "hyp": "Yeah, you pretend."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0083343_0083372",
+      "corpus": "ami",
+      "ref": "Right.",
+      "hyp": "Uh."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0159014_0159111",
+      "corpus": "ami",
+      "ref": "For topic with",
+      "hyp": "For the topic, but."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0041160_0041286",
+      "corpus": "ami",
+      "ref": "This, this, and this.",
+      "hyp": "This. This and this."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0148244_0148497",
+      "corpus": "ami",
+      "ref": "One, okay, and Be Betsy?",
+      "hyp": "One okay, and Betsy."
+    },
+    {
+      "id": "AMI_TS3003c_H01_MTD011UID_0201850_0202217",
+      "corpus": "ami",
+      "ref": "Um bit like so uh um in the form of your hand.",
+      "hyp": "A bit like so, in the form of your hand."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0006711_0006820",
+      "corpus": "ami",
+      "ref": "Okay, right, see ya.",
+      "hyp": "Okay. All right. See."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0120548_0120704",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0069484_0069530",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0187906_0187942",
+      "corpus": "ami",
+      "ref": "'Cause",
+      "hyp": "Because."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0146123_0146177",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0062575_0063003",
+      "corpus": "ami",
+      "ref": "In in that moment it has a sensor, i it it gets a certain darkness",
+      "hyp": "In in that moment, it has a sensor. It it gets a certain darkness."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0126563_0126708",
+      "corpus": "ami",
+      "ref": "He said he might he would try.",
+      "hyp": "He said he would. He would try."
+    },
+    {
+      "id": "AMI_EN2002d_H00_FEO070_0122354_0122457",
+      "corpus": "ami",
+      "ref": "Um I mean we could",
+      "hyp": "I mean, we could."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0117953_0118007",
+      "corpus": "ami",
+      "ref": "That's true, yeah.",
+      "hyp": "That's true."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0038116_0038143",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0109369_0110186",
+      "corpus": "ami",
+      "ref": "Um you can introduce voice recognition by uh finding back your remote.",
+      "hyp": "You can introduce voice recognition by finding back your remote."
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0077323_0077366",
+      "corpus": "ami",
+      "ref": "'Kay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_TS3003c_H03_MTD012ME_0169396_0170527",
+      "corpus": "ami",
+      "ref": "But if we would make um a changing channels and changing volume button on both sides, that would certainly yield great options for the design of the remote.",
+      "hyp": "But if we would make changing channels and changing volume button on both sides, that would certainly yield great options for the design of the remote."
+    },
+    {
+      "id": "AMI_ES2004c_H03_FEE016_0142893_0143138",
+      "corpus": "ami",
+      "ref": "And they kind of respond to the turn of your body.",
+      "hyp": "And they kind of respond to the turn of your body."
+    },
+    {
+      "id": "AMI_TS3003b_H00_MTD009PM_0053803_0053834",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0040914_0040948",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0053902_0053969",
+      "corpus": "ami",
+      "ref": "Mm, mm-hmm.",
+      "hyp": "This."
+    },
+    {
+      "id": "AMI_IS1009d_H00_FIE088_0179899_0180315",
+      "corpus": "ami",
+      "ref": "We used whiteboard, we didn't use digital p well digital pens I guess are these things.",
+      "hyp": "We used whiteboard. We didn't use digital. Well, digital pens, I guess, are these things."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0029102_0030576",
+      "corpus": "ami",
+      "ref": "So um so I can have it so that it returns you a 'cause at the moment the main data structures are hash tables for the meetings that say it's got one that says percent it's called percent talk.",
+      "hyp": "So, as I can have it, so that it returns you a. Is at the moment the main data structures are hash tables for the meetings that say it's got one that says percent is called percent talk."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0182537_0182670",
+      "corpus": "ami",
+      "ref": "Mm I think that's true mm-hmm.",
+      "hyp": "I think that's true."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0116729_0116852",
+      "corpus": "ami",
+      "ref": "Next week sometime, yeah.",
+      "hyp": "Next week, sometime."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0046539_0046695",
+      "corpus": "ami",
+      "ref": "They shouldn't break down easily.",
+      "hyp": "They shouldn't break down easily."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0125866_0125951",
+      "corpus": "ami",
+      "ref": "They've got d",
+      "hyp": "They've got the."
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0123577_0123610",
+      "corpus": "ami",
+      "ref": "Yeah t",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0210764_0210785",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "\u55ef\u3002"
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0146351_0146443",
+      "corpus": "ami",
+      "ref": "Yeah, also.",
+      "hyp": "Yeah. Also."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0054337_0054894",
+      "corpus": "ami",
+      "ref": "and I will just do a preliminary rating of all those criteria on the whiteboard here.",
+      "hyp": "And I will just do a preliminary writing of all those criteria on the whiteboard here."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0146743_0146830",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002b_H00_FEO070_0132290_0132326",
+      "corpus": "ami",
+      "ref": "No.",
+      "hyp": "No."
+    },
+    {
+      "id": "AMI_TS3003b_H00_MTD009PM_0018374_0018562",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0084556_0084761",
+      "corpus": "ami",
+      "ref": "I'm supposed to make a little presentation, aren't I?",
+      "hyp": "I'm supposed to make a little presentation, aren't I?"
+    },
+    {
+      "id": "AMI_ES2004b_H00_MEO015_0074544_0074611",
+      "corpus": "ami",
+      "ref": "Um,",
+      "hyp": "And."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0124910_0124998",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_IS1009b_H01_FIO087_0196082_0196116",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0140434_0140639",
+      "corpus": "ami",
+      "ref": "It's not a lot though.",
+      "hyp": "It's not a lot, though."
+    },
+    {
+      "id": "AMI_IS1009c_H02_FIO084_0170314_0170326",
+      "corpus": "ami",
+      "ref": "Hmm.",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0010830_0010982",
+      "corpus": "ami",
+      "ref": "Can I just nick your",
+      "hyp": "Can I just nick you?"
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0176275_0176799",
+      "corpus": "ami",
+      "ref": "I think maybe it would've come out a d little different, but yeah.",
+      "hyp": "I think maybe it would have come out a little different, but yeah."
+    },
+    {
+      "id": "AMI_IS1009c_H00_FIE088_0151820_0152029",
+      "corpus": "ami",
+      "ref": "Uh that",
+      "hyp": "Uh, that."
+    },
+    {
+      "id": "AMI_IS1009b_H02_FIO084_0149124_0149678",
+      "corpus": "ami",
+      "ref": "It's like a t okay, it's like a timer it's like a lock to the television.",
+      "hyp": "Okay, it's like a timer. It's like a lock to the television."
+    },
+    {
+      "id": "AMI_TS3003d_H02_MTD0010ID_0211100_0211125",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003c_H01_MTD011UID_0061979_0062017",
+      "corpus": "ami",
+      "ref": "Let's see.",
+      "hyp": "Let's see."
+    },
+    {
+      "id": "AMI_EN2002b_H00_FEO070_0031418_0031794",
+      "corpus": "ami",
+      "ref": "And I'll send it out to you again tomorrow or whatever.",
+      "hyp": "And I'll send it out to you again, whatever."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0190401_0190432",
+      "corpus": "ami",
+      "ref": "Um",
+      "hyp": "Um."
+    },
+    {
+      "id": "AMI_EN2002b_H00_FEO070_0004581_0004696",
+      "corpus": "ami",
+      "ref": "I'll make funny drawings.",
+      "hyp": "I'll make funny drawings."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0107255_0107296",
+      "corpus": "ami",
+      "ref": "Yeah?",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_ES2004c_H02_MEE014_0064990_0065140",
+      "corpus": "ami",
+      "ref": "Yeah and",
+      "hyp": "Yeah, and."
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0050095_0050312",
+      "corpus": "ami",
+      "ref": "Depends how how how how things m",
+      "hyp": "Depends on how things."
+    },
+    {
+      "id": "AMI_IS1009b_H02_FIO084_0026483_0026554",
+      "corpus": "ami",
+      "ref": "Mm mm-hmm.",
+      "hyp": "Thank you."
+    },
+    {
+      "id": "AMI_IS1009c_H00_FIE088_0057577_0057611",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0067786_0068008",
+      "corpus": "ami",
+      "ref": "The colour's very attractive.",
+      "hyp": "The color is very attractive."
+    },
+    {
+      "id": "AMI_IS1009a_H03_FIO089_0039523_0039851",
+      "corpus": "ami",
+      "ref": "Mm 'kay that should keep everybody on their toes and challenged.",
+      "hyp": "Okay, that should keep everybody on their toes and challenged."
+    },
+    {
+      "id": "AMI_ES2004b_H00_MEO015_0107454_0107490",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0232414_0232555",
+      "corpus": "ami",
+      "ref": "Yes, right.",
+      "hyp": "Yes. Right."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0169308_0169412",
+      "corpus": "ami",
+      "ref": "As a compound noun.",
+      "hyp": "As a compound noun."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0021546_0021573",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0079370_0079997",
+      "corpus": "ami",
+      "ref": "Would transcripts uh b sounds reasonable to have like transcripts like maybe three alternatives then.",
+      "hyp": "With transcripts, it sounds reasonable to have like transcripts, like maybe three alternates then."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0172507_0172809",
+      "corpus": "ami",
+      "ref": "But at the beginning, it when you haven't searched yet",
+      "hyp": "But at the beginning, when you haven't searched yet."
+    },
+    {
+      "id": "AMI_ES2004c_H03_FEE016_0219094_0219334",
+      "corpus": "ami",
+      "ref": "Yes, it was just, there was just a cost issue with that,",
+      "hyp": "Yes, it was just it was just a cost issue with that."
+    },
+    {
+      "id": "AMI_ES2004c_H03_FEE016_0224851_0224892",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0094276_0094535",
+      "corpus": "ami",
+      "ref": "Yeah, yeah, that yeah, that's feasible.",
+      "hyp": "Yeah, yeah, that, yeah, that's feasible."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0023119_0023309",
+      "corpus": "ami",
+      "ref": "But well, we we can have both, but whatever.",
+      "hyp": "But well, we can have both. But whatever."
+    },
+    {
+      "id": "AMI_IS1009b_H02_FIO084_0058247_0058379",
+      "corpus": "ami",
+      "ref": "Number two, yeah.",
+      "hyp": "Number two."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0152727_0152781",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "\u55ef\u3002"
+    },
+    {
+      "id": "AMI_EN2002d_H00_FEO070_0200435_0200738",
+      "corpus": "ami",
+      "ref": "I just realised I haven't done that part yet.",
+      "hyp": "I just realized I haven't done that part yet."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0046688_0046778",
+      "corpus": "ami",
+      "ref": "It's rechargeable.",
+      "hyp": "It's rechargeable."
+    },
+    {
+      "id": "AMI_IS1009b_H00_FIE088_0122366_0122400",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_IS1009d_H01_FIO087_0153122_0153202",
+      "corpus": "ami",
+      "ref": "One.",
+      "hyp": "One."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0209363_0209665",
+      "corpus": "ami",
+      "ref": "Were the means sufficient for the tasks uh we had to do?",
+      "hyp": "Were the means sufficient for the tasks that we had to do?"
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0049921_0050095",
+      "corpus": "ami",
+      "ref": "Um but we might not, you know, but we might have time.",
+      "hyp": "But we might not. You never know. We might have time."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0213503_0213747",
+      "corpus": "ami",
+      "ref": "I uh",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0185031_0185833",
+      "corpus": "ami",
+      "ref": "I think the only pitfall that we would have would be how much it's going to cost if that means we have to cut down somewhere else",
+      "hyp": "I think the only pitfall that we would have would be how much it's going to cost. If that means we have to cut down somewhere else."
+    },
+    {
+      "id": "AMI_ES2004d_H02_MEE014_0096244_0096449",
+      "corpus": "ami",
+      "ref": "So it would be s p yeah.",
+      "hyp": "So it would be, but yeah."
+    },
+    {
+      "id": "AMI_TS3003b_H00_MTD009PM_0014036_0014375",
+      "corpus": "ami",
+      "ref": "Uh you're going to have a presentation.",
+      "hyp": "You're going to have a presentation."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0116961_0116972",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Oh."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0113083_0113198",
+      "corpus": "ami",
+      "ref": "That's a good point.",
+      "hyp": "That's a good point."
+    },
+    {
+      "id": "AMI_ES2004b_H03_FEE016_0117240_0117928",
+      "corpus": "ami",
+      "ref": "Would you prefer an L. C. D. screen, that's multi-function remote and would you pay more for speech recognition in a remote control?",
+      "hyp": "Would you prefer an LCD screen as a multifunction remote? And would you pay more for speech recognition in a remote control?"
+    },
+    {
+      "id": "AMI_IS1009d_H02_FIO084_0079960_0079992",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_TS3003b_H02_MTD0010ID_0093285_0093468",
+      "corpus": "ami",
+      "ref": "The user presses a button.",
+      "hyp": "The user presses a button."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0218050_0218071",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0016119_0016324",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_ES2004a_H01_FEE013_0097097_0097935",
+      "corpus": "ami",
+      "ref": "Um, right, okay we've got half an hour before the next meeting, so we're all gonna go off and do our individual things.",
+      "hyp": "Right. Okay, we've got half an hour before the next meeting, so we're all going to go off and do our individual things."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0052309_0053124",
+      "corpus": "ami",
+      "ref": "So maybe we really should try to discard some buttons to uh keep our costs low.",
+      "hyp": "So maybe we really should try to discard some buttons to keep our cost low."
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0022987_0023159",
+      "corpus": "ami",
+      "ref": "Okay, yeah, I see what you mean.",
+      "hyp": "Okay. Yeah, I see what you mean."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0184522_0184819",
+      "corpus": "ami",
+      "ref": "Oh, I thought we sort of dis you know what I mean.",
+      "hyp": "Oh, I thought we sort of."
+    },
+    {
+      "id": "AMI_IS1009b_H03_FIO089_0097752_0098520",
+      "corpus": "ami",
+      "ref": "And that's and that's the kind of thing people learn by feel, and um you don't feel the mode change.",
+      "hyp": "And it's and it's the kind of thing people learn by feel, and you don't feel the mode change."
+    },
+    {
+      "id": "AMI_TS3003c_H03_MTD012ME_0156664_0156688",
+      "corpus": "ami",
+      "ref": "'Kay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0172917_0173184",
+      "corpus": "ami",
+      "ref": "Or was it just like that one.",
+      "hyp": "Or was it just like that one?"
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0048030_0048200",
+      "corpus": "ami",
+      "ref": "Okay, yeah, that's fine.",
+      "hyp": "Okay. Yeah, that's fine."
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0060366_0060622",
+      "corpus": "ami",
+      "ref": "So how how would you d how would you calculate that?",
+      "hyp": "So how how would you how would you calculate that?"
+    },
+    {
+      "id": "AMI_TS3003b_H02_MTD0010ID_0083631_0084232",
+      "corpus": "ami",
+      "ref": "Well I think if we are gonna use a touchscreen uh we're gonna go way above the twelve and a half Euros.",
+      "hyp": "Well, I think if we're gonna use a touchscreen, we're gonna go way above the twelve and a half euros."
+    },
+    {
+      "id": "AMI_EN2002d_H00_FEO070_0114513_0115039",
+      "corpus": "ami",
+      "ref": "We change it to Friday.",
+      "hyp": "We changed it to Friday."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0182349_0183117",
+      "corpus": "ami",
+      "ref": "But is it a problem that left-handed persons use a different hand?",
+      "hyp": "But is it a problem that left-handed persons use a different hand?"
+    },
+    {
+      "id": "AMI_ES2004b_H03_FEE016_0117928_0118404",
+      "corpus": "ami",
+      "ref": "So you can see how the the yes no sort of varies across the age group there,",
+      "hyp": "So you can see how the the yes no sort of varies across the age group there."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0168622_0169192",
+      "corpus": "ami",
+      "ref": "before half past six, I will make that file readable, writable, everything.",
+      "hyp": "Before half past six, I will make that file readable, writable, everything."
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0011216_0012023",
+      "corpus": "ami",
+      "ref": "We decided it was important to reflect the company's image in our product, we put fashion in electronics, you know that kind of s thing.",
+      "hyp": "We decided it was important to reflect the company's image in our product. We put fashion and electronics, you know, that kind of thing."
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0103884_0103924",
+      "corpus": "ami",
+      "ref": "Oh right.",
+      "hyp": "All right."
+    },
+    {
+      "id": "AMI_EN2002a_H02_FEO072_0008861_0009603",
+      "corpus": "ami",
+      "ref": "Um the transcription box has got a summarise but button, which doesn't do anything yet.",
+      "hyp": "The transcription box has got a summarize button, which doesn't do anything yet."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0118202_0118283",
+      "corpus": "ami",
+      "ref": "That is",
+      "hyp": "Just."
+    },
+    {
+      "id": "AMI_TS3003a_H01_MTD011UID_0088960_0089086",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0157162_0157354",
+      "corpus": "ami",
+      "ref": "But it's still important to know.",
+      "hyp": "But it's still important to know."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0146864_0146956",
+      "corpus": "ami",
+      "ref": "Right, okay.",
+      "hyp": "Right. Okay."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0157185_0157208",
+      "corpus": "ami",
+      "ref": "No.",
+      "hyp": "No."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0076414_0076455",
+      "corpus": "ami",
+      "ref": "Two.",
+      "hyp": "to."
+    },
+    {
+      "id": "AMI_TS3003b_H02_MTD0010ID_0099094_0099441",
+      "corpus": "ami",
+      "ref": "Keep the inner workings simple, so it's robust.",
+      "hyp": "Keep the inner working simple, so it's robust."
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0115139_0115208",
+      "corpus": "ami",
+      "ref": "NOM text, yeah.",
+      "hyp": "I'm gonna take that."
+    },
+    {
+      "id": "AMI_EN2002a_H00_MEE073_0092565_0092653",
+      "corpus": "ami",
+      "ref": "Okay, alright.",
+      "hyp": "Okay. All right."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0006834_0007037",
+      "corpus": "ami",
+      "ref": "You can see there are a few cameras here.",
+      "hyp": "You can see a few cameras here."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0022598_0022694",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_EN2002b_H01_MEE071_0071209_0071456",
+      "corpus": "ami",
+      "ref": "get attributes, it returns a list of attributes.",
+      "hyp": "Get attributes. It returns a list of attributes."
+    },
+    {
+      "id": "AMI_TS3003d_H02_MTD0010ID_0070917_0070969",
+      "corpus": "ami",
+      "ref": "Yes.",
+      "hyp": "Yes."
+    },
+    {
+      "id": "AMI_EN2002d_H00_FEO070_0033643_0033841",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H00_MEO015_0070123_0070298",
+      "corpus": "ami",
+      "ref": "The first one rating, I'm sorry.",
+      "hyp": "The first one reading. I'm sorry."
+    },
+    {
+      "id": "AMI_IS1009c_H01_FIO087_0163184_0163203",
+      "corpus": "ami",
+      "ref": "Battery.",
+      "hyp": "That."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0020877_0021528",
+      "corpus": "ami",
+      "ref": "So that the who the speakers that are at the meetings and the amount they speak, and then the averages are contained with the speakers.",
+      "hyp": "So the who the speakers that are at the meetings and the amount they speak, and then the averages are contained with the speakers."
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0044706_0044739",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_TS3003b_H00_MTD009PM_0005751_0006002",
+      "corpus": "ami",
+      "ref": "Everybody found his place again?",
+      "hyp": "Everybody found his place again."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0083092_0083471",
+      "corpus": "ami",
+      "ref": "So that when they, you know, click on that, it's gonna go to the relevant thing.",
+      "hyp": "So that when they, you know, click on that, it's going to go to the relevant thing."
+    },
+    {
+      "id": "AMI_ES2004b_H03_FEE016_0089695_0090332",
+      "corpus": "ami",
+      "ref": "Eighty percent would spend more money when a remote control would look fancy, we were quite surprised by that finding,",
+      "hyp": "Eighty percent would spend more money when a remote control would look fancy. We were quite surprised by that finding."
+    },
+    {
+      "id": "AMI_ES2004c_H03_FEE016_0071058_0071107",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "\u55ef\u3002"
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0111209_0111308",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0004309_0004844",
+      "corpus": "ami",
+      "ref": "Okay this is um the second phase uh we're going to discuss today.",
+      "hyp": "Okay, this is the second phase we're going to discuss today."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0168529_0168814",
+      "corpus": "ami",
+      "ref": "Um in f I don't know.",
+      "hyp": "In I don't know."
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0136513_0136562",
+      "corpus": "ami",
+      "ref": "Sort of.",
+      "hyp": "Sort of."
+    },
+    {
+      "id": "AMI_TS3003a_H03_MTD012ME_0131676_0131698",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0248688_0248940",
+      "corpus": "ami",
+      "ref": "Or th three o'clock?",
+      "hyp": "Or three o'clock."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0015793_0015854",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_TS3003c_H01_MTD011UID_0051241_0051584",
+      "corpus": "ami",
+      "ref": "So um findings.",
+      "hyp": "So findings."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0073594_0073824",
+      "corpus": "ami",
+      "ref": "And, of course, price.",
+      "hyp": "And of course, price."
+    },
+    {
+      "id": "AMI_TS3003b_H01_MTD011UID_0184831_0184883",
+      "corpus": "ami",
+      "ref": "No.",
+      "hyp": "No."
+    },
+    {
+      "id": "AMI_ES2004d_H00_MEO015_0064016_0064051",
+      "corpus": "ami",
+      "ref": "'Kay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0147227_0147341",
+      "corpus": "ami",
+      "ref": "I gave it a one.",
+      "hyp": "I gave it one."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0114458_0115163",
+      "corpus": "ami",
+      "ref": "I thought I thought we said th I thought we ch yeah, I thought we change it to the tenth or something.",
+      "hyp": "I thought we said. I thought we. Yeah, I thought we changed it to the tenth or something."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0270985_0271210",
+      "corpus": "ami",
+      "ref": "You still have to do the N. X. T. search then, right?",
+      "hyp": "You still do the N X T search, then, right?"
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0027476_0027982",
+      "corpus": "ami",
+      "ref": "It's just much bigger than all of our home directories combined, isn't it?",
+      "hyp": "This is much bigger than all of our home directories combined, isn't it? Yeah, stupid, really."
+    },
+    {
+      "id": "AMI_ES2004c_H02_MEE014_0212875_0212917",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009d_H00_FIE088_0094226_0094356",
+      "corpus": "ami",
+      "ref": "Is that's what we're using?",
+      "hyp": "Is that what we're using?"
+    },
+    {
+      "id": "AMI_ES2004b_H01_FEE013_0167575_0169104",
+      "corpus": "ami",
+      "ref": "six digit number afterwards and that's the number you put in and it's recorded that it's going to be on on Tuesdays at ten o'clock on the seventeenth so you don't have to worry about dates and you don't have to worry about times",
+      "hyp": "Six-digit number afterwards, and that's the number you put in, and it's recorded that it's going to be on on Tuesdays at 10 o'clock on the 17th, things like that. So you don't have to worry about dates, and you don't have to worry about times."
+    },
+    {
+      "id": "AMI_TS3003c_H02_MTD0010ID_0098436_0098719",
+      "corpus": "ami",
+      "ref": "But I don't think that's really an option.",
+      "hyp": "But I don't think that's really an option."
+    },
+    {
+      "id": "AMI_TS3003a_H01_MTD011UID_0001534_0001556",
+      "corpus": "ami",
+      "ref": "Morning.",
+      "hyp": "Money."
+    },
+    {
+      "id": "AMI_IS1009c_H00_FIE088_0077090_0077226",
+      "corpus": "ami",
+      "ref": "Okay, and you",
+      "hyp": "Okay, and you."
+    },
+    {
+      "id": "AMI_ES2004a_H01_FEE013_0091737_0092964",
+      "corpus": "ami",
+      "ref": "In that you've got the basic buttons just for your play, volume, programme things and also and then a menu to go into with obvious pictures",
+      "hyp": "In that you've got the basic buttons just for your play, volume, program, things, and also, and then a menu to go into with obvious pictures."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0068492_0068539",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_ES2004a_H00_MEO015_0032773_0033136",
+      "corpus": "ami",
+      "ref": "it doesn't discriminate between you, based on what you are.",
+      "hyp": "It doesn't discriminate between you based on what you are."
+    },
+    {
+      "id": "AMI_IS1009a_H00_FIE088_0026002_0026470",
+      "corpus": "ami",
+      "ref": "Then, tool training try out the white board, participant can draw their favourite animal.",
+      "hyp": "Then tool training. Try out the whiteboard. Participant can draw their favorite animal."
+    },
+    {
+      "id": "AMI_IS1009b_H03_FIO089_0169762_0169980",
+      "corpus": "ami",
+      "ref": "You can make a banana shaped one.",
+      "hyp": "You can make a banana-shaped one."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0152066_0152323",
+      "corpus": "ami",
+      "ref": "Um and then how about how we doing on colour?",
+      "hyp": "And then, how about how are we doing on color?"
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0015004_0015184",
+      "corpus": "ami",
+      "ref": "Well, just sorta well the thing is, yeah",
+      "hyp": "Well, just sort of. Well, the thing is, yeah."
+    },
+    {
+      "id": "AMI_IS1009b_H01_FIO087_0147193_0147988",
+      "corpus": "ami",
+      "ref": "and then to save electricity uh there should not be uh much s move uh lots of circuits and all that.",
+      "hyp": "And then to save electricity, there should not be much more, lots of circuits and all that."
+    },
+    {
+      "id": "AMI_TS3003b_H01_MTD011UID_0058010_0058052",
+      "corpus": "ami",
+      "ref": "Uh.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004a_H03_FEE016_0069112_0069189",
+      "corpus": "ami",
+      "ref": "Alright.",
+      "hyp": "All right."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0043736_0043758",
+      "corpus": "ami",
+      "ref": "Mayb",
+      "hyp": "I."
+    },
+    {
+      "id": "AMI_EN2002b_H00_FEO070_0172761_0173069",
+      "corpus": "ami",
+      "ref": "I mean if we both yeah.",
+      "hyp": "I mean the food bus, yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0086309_0086708",
+      "corpus": "ami",
+      "ref": "We've talked about pointers, but the very use of a remote control, if you're someone who's zapping,",
+      "hyp": "We've talked about pointers, but the very use of a remote control\u2014if you're someone who's zapping."
+    },
+    {
+      "id": "AMI_TS3003a_H01_MTD011UID_0099018_0099099",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0088813_0089409",
+      "corpus": "ami",
+      "ref": "No, just just panes, just result panes for each of the three no no no, no No.",
+      "hyp": "No, just just pains, just result pains, creature of the three. No, no, no, no, no."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0232341_0232375",
+      "corpus": "ami",
+      "ref": "Mm yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002d_H00_FEO070_0140392_0140448",
+      "corpus": "ami",
+      "ref": "Well uh",
+      "hyp": "Wow."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0081861_0082312",
+      "corpus": "ami",
+      "ref": "So we could use any strong fruit and veg colours and that's what we're intending to do.",
+      "hyp": "So we could use any strong fruit and veg colours, and that's what we're intending to do."
+    },
+    {
+      "id": "AMI_ES2004d_H00_MEO015_0070543_0070603",
+      "corpus": "ami",
+      "ref": "The first.",
+      "hyp": "The first."
+    },
+    {
+      "id": "AMI_ES2004a_H03_FEE016_0044316_0044795",
+      "corpus": "ami",
+      "ref": "Um, I'm very impressed with your artistic skills, mine's are dreadful.",
+      "hyp": "I'm I'm very impressed with your artistic skills. Mine's are dreadful."
+    },
+    {
+      "id": "AMI_IS1009b_H00_FIE088_0122544_0122578",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0178333_0178889",
+      "corpus": "ami",
+      "ref": "So if you're looking for wireless, wired, wire, blah, blah, blah, you do wire with a star and um no?",
+      "hyp": "So if you're looking for wireless, wired, wire, blah blah blah, you do wire with a star, and no."
+    },
+    {
+      "id": "AMI_IS1009b_H02_FIO084_0109521_0110074",
+      "corpus": "ami",
+      "ref": "and wires connecting all chips, which is uh lights, everything, so there should be wires.",
+      "hyp": "And wires connecting all chips, which is lights everything. So there should be wires."
+    },
+    {
+      "id": "AMI_EN2002a_H00_MEE073_0037844_0038530",
+      "corpus": "ami",
+      "ref": "Is that is that from any particular window, like if we wanna sorta get like if we were on the users versus like topic or something",
+      "hyp": "Is that is that from any particular window? Like, if we want to sort of get, like, if we're on the users versus like a topic or something."
+    },
+    {
+      "id": "AMI_EN2002a_H03_MEE071_0142936_0142957",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004b_H00_MEO015_0053624_0053899",
+      "corpus": "ami",
+      "ref": "It can be okay, that's okay with me.",
+      "hyp": "It can't be. Okay, that's okay with me."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0176137_0176267",
+      "corpus": "ami",
+      "ref": "Yeah, yeah, that's true.",
+      "hyp": "Yeah, yeah, that's true."
+    },
+    {
+      "id": "AMI_EN2002a_H00_MEE073_0116804_0116848",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003a_H03_MTD012ME_0097731_0097760",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003b_H01_MTD011UID_0177940_0177957",
+      "corpus": "ami",
+      "ref": "No.",
+      "hyp": "\u55ef\u3002"
+    },
+    {
+      "id": "AMI_EN2002d_H01_FEO072_0152163_0152341",
+      "corpus": "ami",
+      "ref": "So um",
+      "hyp": "So."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0158298_0158329",
+      "corpus": "ami",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0176928_0177045",
+      "corpus": "ami",
+      "ref": "Mm m",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0220248_0220721",
+      "corpus": "ami",
+      "ref": "Um that's that's true, that's or unless you have two.",
+      "hyp": "That's that's true. That's oh yes, you have two."
+    },
+    {
+      "id": "AMI_IS1009d_H02_FIO084_0082651_0082676",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0175939_0176153",
+      "corpus": "ami",
+      "ref": "But I don't think we should spend very much time in that.",
+      "hyp": "But I don't think we should spend very much time in that."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0122342_0122553",
+      "corpus": "ami",
+      "ref": "Maybe you have to just clap it down?",
+      "hyp": "Maybe you have to just clap it down."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0167571_0168186",
+      "corpus": "ami",
+      "ref": "But if it's like a two word term, does the T. F. I. D. F. handle that?",
+      "hyp": "But if it's like a two-word term, does the TF-IDF handle that?"
+    },
+    {
+      "id": "AMI_EN2002c_H01_FEO072_0079893_0079920",
+      "corpus": "ami",
+      "ref": "Or",
+      "hyp": "Oh."
+    },
+    {
+      "id": "AMI_EN2002c_H03_MEE073_0160282_0160304",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_IS1009c_H02_FIO084_0156353_0156374",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0125664_0125902",
+      "corpus": "ami",
+      "ref": "That's sorta what we were thinking before.",
+      "hyp": "That's sort of what we were thinking before."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0022549_0022601",
+      "corpus": "ami",
+      "ref": "Oh really?",
+      "hyp": "Oh really."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0011206_0011375",
+      "corpus": "ami",
+      "ref": "Let's do it read only.",
+      "hyp": "Let's do it. Read only."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0097042_0097588",
+      "corpus": "ami",
+      "ref": "It go welcome to the meeting browser.",
+      "hyp": "Welcome to the meeting, brother."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0202770_0203384",
+      "corpus": "ami",
+      "ref": "but that's not really what we're focusing on, what we're focusing on is the m you know yes.",
+      "hyp": "But that's not really what we're focusing on. What we're focusing on is the, you know, yes."
+    },
+    {
+      "id": "AMI_TS3003c_H03_MTD012ME_0119311_0119924",
+      "corpus": "ami",
+      "ref": "Um well this is Yeah but this is here the question was, would you prefer it.",
+      "hyp": "Well, this is yeah, but this is here. The question was, would you prefer it?"
+    },
+    {
+      "id": "AMI_EN2002b_H02_FEO072_0098544_0098638",
+      "corpus": "ami",
+      "ref": "colour-code those.",
+      "hyp": "Color code those."
+    },
+    {
+      "id": "AMI_ES2004b_H00_MEO015_0053135_0053192",
+      "corpus": "ami",
+      "ref": "Yep.",
+      "hyp": "Yep."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0109508_0109679",
+      "corpus": "ami",
+      "ref": "It's pretty uh easy.",
+      "hyp": "It's pretty easy."
+    },
+    {
+      "id": "AMI_EN2002a_H00_MEE073_0153425_0153739",
+      "corpus": "ami",
+      "ref": "Oh, it like digital, okay.",
+      "hyp": "Oh, like digital art. Okay."
+    },
+    {
+      "id": "AMI_IS1009b_H02_FIO084_0136695_0136725",
+      "corpus": "ami",
+      "ref": "Mm.",
+      "hyp": "Hmm."
+    },
+    {
+      "id": "AMI_IS1009c_H00_FIE088_0014486_0015156",
+      "corpus": "ami",
+      "ref": "Our technical manager has then said that she feels it should have a chip",
+      "hyp": "Our technical manager has then said that she feels it should have a chip."
+    },
+    {
+      "id": "AMI_TS3003c_H01_MTD011UID_0070161_0070233",
+      "corpus": "ami",
+      "ref": "Um",
+      "hyp": "Um."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0125070_0125180",
+      "corpus": "ami",
+      "ref": "He'll probably re-do it anyway.",
+      "hyp": "They probably redo it anyway."
+    },
+    {
+      "id": "AMI_TS3003b_H03_MTD012ME_0183188_0183919",
+      "corpus": "ami",
+      "ref": "You have it on Yeah you have it's on some phones too, which have a docking station.",
+      "hyp": "You have it on, yeah. You have it on some phones too, which have a docking station."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0147923_0148245",
+      "corpus": "ami",
+      "ref": "But they know the scroll-buttons from uh old radios.",
+      "hyp": "But they know the scroll buttons from old radios."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0152156_0152341",
+      "corpus": "ami",
+      "ref": "But very special, so uh",
+      "hyp": "That's very special, so."
+    },
+    {
+      "id": "AMI_TS3003c_H01_MTD011UID_0076721_0077038",
+      "corpus": "ami",
+      "ref": "So you you can uh easily uh shift up or shift down.",
+      "hyp": "So you you can easily shift up or shift down."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0245441_0245777",
+      "corpus": "ami",
+      "ref": "If somebody has some questions they can ask them now.",
+      "hyp": "If somebody has some questions, they can ask them now."
+    },
+    {
+      "id": "AMI_IS1009d_H03_FIO089_0058041_0058417",
+      "corpus": "ami",
+      "ref": "The next channel in the numeric pattern, or",
+      "hyp": "The next channel in the numeric pattern, or."
+    },
+    {
+      "id": "AMI_TS3003d_H02_MTD0010ID_0131028_0131056",
+      "corpus": "ami",
+      "ref": "And it",
+      "hyp": "And it."
+    },
+    {
+      "id": "AMI_IS1009b_H03_FIO089_0076859_0076911",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "uh-huh."
+    },
+    {
+      "id": "AMI_TS3003d_H03_MTD012ME_0083439_0083715",
+      "corpus": "ami",
+      "ref": "Especially since we have those nice features.",
+      "hyp": "Especially since we have those nice features."
+    },
+    {
+      "id": "AMI_IS1009b_H01_FIO087_0169295_0169374",
+      "corpus": "ami",
+      "ref": "Different colours.",
+      "hyp": "Different colors."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0080678_0080690",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004d_H01_FEE013_0010901_0010995",
+      "corpus": "ami",
+      "ref": "Yes, yes you can.",
+      "hyp": "Yes. Yes, you can."
+    },
+    {
+      "id": "AMI_ES2004b_H02_MEE014_0191928_0192056",
+      "corpus": "ami",
+      "ref": "Yeah on that as well so.",
+      "hyp": "Yeah, on that as well. So."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0007473_0008027",
+      "corpus": "ami",
+      "ref": "So after this you will be uh free to go and uh spend all your money.",
+      "hyp": "So after that you'll be free to go and spend all your money."
+    },
+    {
+      "id": "AMI_EN2002a_H00_MEE073_0146304_0146826",
+      "corpus": "ami",
+      "ref": "How many hours is this?",
+      "hyp": "Um. Yeah. Yeah. How many hours is this?"
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0126889_0127431",
+      "corpus": "ami",
+      "ref": "Because it will increase cost uh signifi uh significantly.",
+      "hyp": "Because it will increase cost significantly."
+    },
+    {
+      "id": "AMI_EN2002a_H02_FEO072_0036132_0036419",
+      "corpus": "ami",
+      "ref": "Y we have to first define what what happens when you click on a user.",
+      "hyp": "We have to first define what what happens when you click on a user."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0174429_0174744",
+      "corpus": "ami",
+      "ref": "S like that's that's the other big part.",
+      "hyp": "Like that's that's the other, big part."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0030652_0030669",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0106575_0107074",
+      "corpus": "ami",
+      "ref": "I still can't make it run T. N. T. from Java.",
+      "hyp": "I still can't make it run TNT from Java."
+    },
+    {
+      "id": "AMI_EN2002c_H02_MEE071_0037710_0037768",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004c_H01_FEE013_0161564_0161743",
+      "corpus": "ami",
+      "ref": "'Cause if you're thinking about holding it",
+      "hyp": "Because if you're thinking about holding it."
+    },
+    {
+      "id": "AMI_ES2004b_H02_MEE014_0157195_0157237",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004c_H02_MEE014_0169476_0169518",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_ES2004a_H02_MEE014_0036174_0036765",
+      "corpus": "ami",
+      "ref": "Well since you guys have chosen the ones I wanted to do, I'll have to have to go for something a bit random.",
+      "hyp": "Well, since you guys have chosen the ones I wanted to do, I have to have to go for something a bit random."
+    },
+    {
+      "id": "AMI_ES2004c_H02_MEE014_0146938_0147093",
+      "corpus": "ami",
+      "ref": "I mean you can you could do it",
+      "hyp": "I mean, you can. You could do it."
+    },
+    {
+      "id": "AMI_EN2002d_H02_MEE071_0212200_0212531",
+      "corpus": "ami",
+      "ref": "I suppose it's not it's it's as straightforward as writing in X. M. L. files.",
+      "hyp": "It's not. It's it's as straightforward as writing an XML file."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0144867_0144899",
+      "corpus": "ami",
+      "ref": "Oh no.",
+      "hyp": "I don't know."
+    },
+    {
+      "id": "AMI_ES2004d_H03_FEE016_0057098_0057436",
+      "corpus": "ami",
+      "ref": "It will just be criteria one, two, three, four, five, six, or A., B.",
+      "hyp": "It will just be criteria one, two, three, four, five, six, or A, B."
+    },
+    {
+      "id": "AMI_EN2002d_H03_MEE073_0204169_0204217",
+      "corpus": "ami",
+      "ref": "Mm-hmm.",
+      "hyp": "Uh huh."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0033027_0033078",
+      "corpus": "ami",
+      "ref": "Um",
+      "hyp": "Um."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0040965_0041081",
+      "corpus": "ami",
+      "ref": "Uh then",
+      "hyp": "Then."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0042895_0043697",
+      "corpus": "ami",
+      "ref": "And these are available on the smart boards as well, so if you have a document you wanna show, just open it from the folder.",
+      "hyp": "And these are available on the smartboards as well. So if you have a document you want to show, just open it from the folder."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0032249_0032460",
+      "corpus": "ami",
+      "ref": "Here, I'll s here's the old one.",
+      "hyp": "Here's the old one."
+    },
+    {
+      "id": "AMI_EN2002a_H01_FEO070_0029382_0029782",
+      "corpus": "ami",
+      "ref": "More than the speaker characterisation, as m Steve mentioned.",
+      "hyp": "More than the speaker characterization, as Steve mentioned."
+    },
+    {
+      "id": "AMI_TS3003d_H00_MTD009PM_0251380_0251450",
+      "corpus": "ami",
+      "ref": "I don't.",
+      "hyp": "I don't."
+    },
+    {
+      "id": "AMI_EN2002b_H03_MEE073_0158808_0158836",
+      "corpus": "ami",
+      "ref": "Yeah.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "AMI_TS3003c_H00_MTD009PM_0185783_0185988",
+      "corpus": "ami",
+      "ref": "In one or ano another way.",
+      "hyp": "In one another, another way."
+    },
+    {
+      "id": "AMI_TS3003d_H01_MTD011UID_0067462_0067814",
+      "corpus": "ami",
+      "ref": "But I don't don't know if if it's cheaper.",
+      "hyp": "But I don't don't know if if it's cheaper."
+    },
+    {
+      "id": "AMI_TS3003a_H00_MTD009PM_0028819_0029177",
+      "corpus": "ami",
+      "ref": "But I think you know it already by yourself.",
+      "hyp": "But I think you know it already by yourself."
+    },
+    {
+      "id": "4479741/365.wav",
+      "corpus": "earnings22",
+      "ref": "But we are, you know focused on delivering double digit growth for our lighthouses year over year.",
+      "hyp": "But we are, you know, focused on delivering double growth rate for our live houses year over year."
+    },
+    {
+      "id": "4450488/381.wav",
+      "corpus": "earnings22",
+      "ref": "We do have, uh, CapEx, um, for improvements, um, that are needed.",
+      "hyp": "We do have capex for improvements that are needed."
+    },
+    {
+      "id": "4485244/277.wav",
+      "corpus": "earnings22",
+      "ref": "Hey, hey Bill, it's Rob.",
+      "hyp": "Hey, hey, Bill. It's Rob."
+    },
+    {
+      "id": "4479741/155.wav",
+      "corpus": "earnings22",
+      "ref": "Hello.",
+      "hyp": "So look."
+    },
+    {
+      "id": "4483338/459.wav",
+      "corpus": "earnings22",
+      "ref": "Actually, I think, Yogesh described that very well at our Capital Markets Day.",
+      "hyp": "Actually, I think Yogesh described that very well at our capital markets day. So."
+    },
+    {
+      "id": "4432298/337.wav",
+      "corpus": "earnings22",
+      "ref": "And uh, because those things were, were, to our opinion, the most important.",
+      "hyp": "And because those things were, were, to our opinion, the most important."
+    },
+    {
+      "id": "4483338/366.wav",
+      "corpus": "earnings22",
+      "ref": "Hey, Peter, on the TV or- or in entertainment business, uh, just to, um, give you, um, sort of some insight there.",
+      "hyp": "Hey Peter, on the TV, or an entertainment business, just to give you sort of some insight there."
+    },
+    {
+      "id": "4479741/43.wav",
+      "corpus": "earnings22",
+      "ref": "That said, I'm very pleased that a large part of our fiscal year ' 22 orders for HMO is already through long term contracts.",
+      "hyp": "That said, I'm very pleased that a large part of our fiscal year 22 orders for HMO is already secured through long-term contracts."
+    },
+    {
+      "id": "4483338/70.wav",
+      "corpus": "earnings22",
+      "ref": "We see continued end-user service revenue growth in fixed broadband of 3%, driven by both ASPU and volume growth.",
+      "hyp": "Mobile. We see continued end-user service revenue growth in fixed broadband of 3%, driven by both ASPU and volume growth."
+    },
+    {
+      "id": "4483338/575.wav",
+      "corpus": "earnings22",
+      "ref": "And should we be concerned about your ability to close the gap on TV and mobile prices because of that?",
+      "hyp": "Should we be concerned about your ability to close the gap on Telia's mobile prices because of that?"
+    },
+    {
+      "id": "4485244/425.wav",
+      "corpus": "earnings22",
+      "ref": "You know, so there's clearly a lot of momentum across the entire platform, and I appreciate all the color on the outlook, but what do you think will be the biggest driver of growth over the next five years?",
+      "hyp": "So there's clearly a lot of momentum across the entire platform, and I appreciate all the color on the outlook. But what do you think will be the biggest driver of growth over the next five years?"
+    },
+    {
+      "id": "4432298/108.wav",
+      "corpus": "earnings22",
+      "ref": "Eh, and this quarter as usual, we presented revenues divided into\u2026",
+      "hyp": "And this quarter, as usual, we presented revenues."
+    },
+    {
+      "id": "4485244/241.wav",
+      "corpus": "earnings22",
+      "ref": "And so the business is organized by geography here and you're correct, you've, you've seen some hiring related to that.",
+      "hyp": "And so the business is organized by geography here, and you're correct. You've seen some hiring related to that."
+    },
+    {
+      "id": "4450488/322.wav",
+      "corpus": "earnings22",
+      "ref": "For instance, for Sardinia we had a higher inventory of, uh, rolled sheets because we are getting ready for several weeks of, uh, downtime of, uh, Sardinia smelter.",
+      "hyp": "For instance, for Czernia, we have a higher inventory of rolled sheets because we are getting ready for several weeks of downtime of Czernia's military."
+    },
+    {
+      "id": "4485244/117.wav",
+      "corpus": "earnings22",
+      "ref": "That leads into the second topic I'd like to touch on, fundraising and our pipeline.",
+      "hyp": "That leads into the second topic I'd like to touch on: fundraising and our pipeline. As"
+    },
+    {
+      "id": "4483338/415.wav",
+      "corpus": "earnings22",
+      "ref": "Um, I have one question please on wage inflation pressures.",
+      "hyp": "And I have one question, please, on wage inflation pressures. So."
+    },
+    {
+      "id": "4485244/413.wav",
+      "corpus": "earnings22",
+      "ref": "So I'm not sure we'll ever reach stasis frankly, but to Rob's point, we're a bit ahead of where we thought we'd be and we we'll keep you updated, but the block activity's obviously been significant since we signed the deal.",
+      "hyp": "So I'm not sure we'll ever reach stasis, frankly. But to Rob's point, we're a bit ahead of where we thought we'd be, and we'll keep you updated. But the block activity has obviously been significant since we signed the deal."
+    },
+    {
+      "id": "4483338/162.wav",
+      "corpus": "earnings22",
+      "ref": "And this leads to some investment in the market.",
+      "hyp": "And this leads to some investment in the market."
+    },
+    {
+      "id": "4432298/159.wav",
+      "corpus": "earnings22",
+      "ref": "In terms of digital, um, I've seen I've seen discounts of, uh, 10 and 20% on the pc PC store front.",
+      "hyp": "In terms of digital, I've seen discounts of ten and twenty percent on the PC store fronts."
+    },
+    {
+      "id": "4470290/118.wav",
+      "corpus": "earnings22",
+      "ref": "We will now begin the question and answer session.",
+      "hyp": "We will now begin the question and answer session."
+    },
+    {
+      "id": "4485244/550.wav",
+      "corpus": "earnings22",
+      "ref": "So I know there's been a couple questions today about, you know, market volatility, and it's been a little more bumpy beginning of this year than what we saw last, but from our standpoint, that tends to be, you know, quite good news.",
+      "hyp": "So I know there's been a couple questions today about you know market volatility, and it's been a little more bumpy beginning of this year than what we saw last. But from our standpoint, that tends to be you know quite good news."
+    },
+    {
+      "id": "4450488/359.wav",
+      "corpus": "earnings22",
+      "ref": "I have to actually add to what I said that we are expecting the, um, our capacity fee to go down.",
+      "hyp": "I have to actually add to what I said, but we are expecting the power capacity fee to go down."
+    },
+    {
+      "id": "4485244/450.wav",
+      "corpus": "earnings22",
+      "ref": "We've talked about private wealth a lot today, but there's a lot happening also in the institutional channels.",
+      "hyp": "We talked about private wealth a lot today, but there's a lot happening also in the institutional channels."
+    },
+    {
+      "id": "4485244/372.wav",
+      "corpus": "earnings22",
+      "ref": "And I think we've over time also mentioned these longer dated, uh, strategic type partnerships.",
+      "hyp": "And I think we've over time also mentioned these longer dated strategic type partnerships."
+    },
+    {
+      "id": "4479741/25.wav",
+      "corpus": "earnings22",
+      "ref": "uh, with the first launches of the five HMO mix in the U.S. market, which had an extraordinary impact in Q1 as customers ramped up ahead of their product launches.",
+      "hyp": "With the first launches of the five HMO mix in the U.S. market, which had an extraordinary impact in Q1 as customers ramped up ahead of their product launches."
+    },
+    {
+      "id": "4483338/72.wav",
+      "corpus": "earnings22",
+      "ref": "And moving on to B2B, next page.",
+      "hyp": "And moving on to B2B, next page."
+    },
+    {
+      "id": "4432298/201.wav",
+      "corpus": "earnings22",
+      "ref": "And on the with major fixing taking place in the first quarter, do you see any improvement in terms of flexibility or lower costs which incur in the second quarter?",
+      "hyp": "And on the cost side again, aside again, with major fixing taking place in the first quarter, do you see any improvement in terms of profitability or lower costs, which which incur in the second quarter?"
+    },
+    {
+      "id": "4483338/347.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, Kjell, on the IT migration, um, transformation, et cetera, is this running according to plan?",
+      "hyp": "On the IT migration, transformation, etc., is this running according to plan?"
+    },
+    {
+      "id": "4485244/171.wav",
+      "corpus": "earnings22",
+      "ref": "Um, and then secondly, you know, Rob, you mentioned a number of fundraising initiatives for 2022.",
+      "hyp": "And then, secondly, you know, Rob, you mentioned a number of fundraising initiatives for 2022. I was"
+    },
+    {
+      "id": "4450488/273.wav",
+      "corpus": "earnings22",
+      "ref": "And the last thing which also contribute to the results, I would appreciate very much a short, but, uh, um, informative, uh, uh, discussion of this component of costs, uh, stock.",
+      "hyp": "And the last thing, which also contributes to the result, I would appreciate very much a short but informative discussion of this component of costs, stock. You."
+    },
+    {
+      "id": "4483338/397.wav",
+      "corpus": "earnings22",
+      "ref": "And then I hand over to Hendrik.",
+      "hyp": "And then I hand over to Hendrik."
+    },
+    {
+      "id": "4470290/170.wav",
+      "corpus": "earnings22",
+      "ref": "So the numbers that Alberto referred to in this question should be, uh, sustained over the next few months.",
+      "hyp": "So the the numbers that Alberto referred to in the previous question should be sustained over the next year."
+    },
+    {
+      "id": "4450488/401.wav",
+      "corpus": "earnings22",
+      "ref": "It's not possible to upgrade these machines from the battery because the battery would be up very soon.",
+      "hyp": "It's not possible to operate these machines from the battery, because the battery would be up very soon. But"
+    },
+    {
+      "id": "4432298/9.wav",
+      "corpus": "earnings22",
+      "ref": "As we announced before, this year, you can also expect three providing small bonus content for gamers as well as an updated next-gen edition of the game, which is scheduled for the second half of the year.",
+      "hyp": "As we announced before, this year you can also expect free DLCs providing small bonus content for gamers, as well as an updated Next Gen edition of the game, which is scheduled for the second half of the year."
+    },
+    {
+      "id": "4483338/158.wav",
+      "corpus": "earnings22",
+      "ref": "We also expect to see continued momentum in the Baltics to provide support for the entire Group.",
+      "hyp": "We also expect to see continued momentum in the Baltics to provide support for the entire."
+    },
+    {
+      "id": "4450488/282.wav",
+      "corpus": "earnings22",
+      "ref": "So it is, uh, inconvenient for us to discuss it at the moment, uh, that, uh, results from the existing geology.",
+      "hyp": "So it is inconvenient for us to discuss it at the moment. That results from the existing geology. We."
+    },
+    {
+      "id": "4479741/147.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, we do not wish at this point in time to be very specific on it, uh, but it is, uh, it is part of the, you know, uh, the view that we look at, uh, landing the 24.4%, uh- uh, for- for Q1.",
+      "hyp": "We do not wish, at this point in time, to be very specific on it, but it is it is part of the you know the view that we look at landing the twenty four point four percent for for Q one."
+    },
+    {
+      "id": "4483338/12.wav",
+      "corpus": "earnings22",
+      "ref": "Um, so welcome to the, uh, Tele2 report call for the Fourth Quarter and Full Year of 2021.",
+      "hyp": "So, welcome to the Teladoc report call for the fourth quarter and the full year of 2021."
+    },
+    {
+      "id": "4483338/440.wav",
+      "corpus": "earnings22",
+      "ref": "The next question comes from the line of Pontus Pontus Wachtmeister from SEB.",
+      "hyp": "The next question comes from Luan of Pontus, which may stem from SCB."
+    },
+    {
+      "id": "4432298/238.wav",
+      "corpus": "earnings22",
+      "ref": "One we finish the research phase, which should come shortly, this will be qualified as development expenditures and will be capitalized.",
+      "hyp": "Once we finish the research phase, which should come shortly, this will be qualified as development expenditures and will be capitalized."
+    },
+    {
+      "id": "4450488/499.wav",
+      "corpus": "earnings22",
+      "ref": "Um, but we have already mentioned here that those, uh, things are being studied as part of, uh, a broader discussion, broader thinking.",
+      "hyp": "Hydrogen. We have already mentioned here that those things are being studied as part of broader discussion, broader thinking."
+    },
+    {
+      "id": "4450488/128.wav",
+      "corpus": "earnings22",
+      "ref": "At Sierra Gorda, we also had C1 unit costs, uh falling.",
+      "hyp": "At Siragorda, we also had C1 unit cost falling."
+    },
+    {
+      "id": "4479741/144.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, I will pass it on to Lisa to comment on, you know, your specific question about, uh, our input, uh, costs.",
+      "hyp": "I will pass it on to Lisa to comment on your specific question about input costs."
+    },
+    {
+      "id": "4485244/14.wav",
+      "corpus": "earnings22",
+      "ref": "Our call will contain forward looking statements, which do not guarantee future events or performance.",
+      "hyp": "Our call will contain forward-looking statements, which do not guarantee future events or performance. Please."
+    },
+    {
+      "id": "4450488/489.wav",
+      "corpus": "earnings22",
+      "ref": "Yes, it does follow from, uh, regulations.",
+      "hyp": "Yes, it does follow from regulations."
+    },
+    {
+      "id": "4432298/348.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, but of course we'll keep hiring in Poland.",
+      "hyp": "Poland, there, but of course we will keep hiring in Poland."
+    },
+    {
+      "id": "4479741/408.wav",
+      "corpus": "earnings22",
+      "ref": "I, uh\u2026",
+      "hyp": "I."
+    },
+    {
+      "id": "4485244/89.wav",
+      "corpus": "earnings22",
+      "ref": "Together, these earning streams resulted in $1.4 billion of asset management operating earnings.",
+      "hyp": "Together, these earning streams resulted in 1.4 billion of asset management operating earnings."
+    },
+    {
+      "id": "4479741/108.wav",
+      "corpus": "earnings22",
+      "ref": "Under which we will pursue a number of initiatives, including converting local, uh, electricity supply to renewables, reaching a 100% recyclability of our key packaging materials and 100% circular management of our bio waste, working smarter with heat supply, and switching to refrigerants with limited climate impact.",
+      "hyp": "Under which we will pursue a number of initiatives, including converting total electricity supply to renewables, reaching 100% recyclability of our key packaging materials, and 100% circular management of our bio waste. Working smarter with heat supply and switching to refrigerants with limited climate impact, and."
+    },
+    {
+      "id": "4479741/398.wav",
+      "corpus": "earnings22",
+      "ref": "Hi, good, good morning, uh, Misha and good morning, Lisa.",
+      "hyp": "Good morning, Marissa. Good morning, Lisa."
+    },
+    {
+      "id": "4479741/292.wav",
+      "corpus": "earnings22",
+      "ref": "We don't view that as a concern for this year Heidi, but we closely monitor, um you know, the trends, uh, uh, uh in dairy development both for cheese and for the fermented segment.",
+      "hyp": "We don't view that as a concern for this year, Heidi. But we closely monitor, you know, the trends in dairy development, both for cheese and for the fermented segment."
+    },
+    {
+      "id": "4479741/319.wav",
+      "corpus": "earnings22",
+      "ref": "On regulatory, I think the bigger, the biggest next step would be the regulatory approval of HMO's in China.",
+      "hyp": "On regulatory, I think the bigger, the biggest next step will be the regulatory approval of HMOs in."
+    },
+    {
+      "id": "4479741/208.wav",
+      "corpus": "earnings22",
+      "ref": "Um, should we understand that to, uh, be a reflection of some pull forward, uh, of demand for, uh, the\u2026",
+      "hyp": "Should we understand that to be a reflection of some pull forward of demand for the?"
+    },
+    {
+      "id": "4479741/66.wav",
+      "corpus": "earnings22",
+      "ref": "This was in partly offset by positive contribution from production efficiencies and scalability from the sales growth, combined with synergies from our probiotics acquisitions.",
+      "hyp": "This was then partly offset by a positive contribution from production efficiencies and scalability from the sales growth, combined with synergies from our probiotics acquisitions."
+    },
+    {
+      "id": "4450488/399.wav",
+      "corpus": "earnings22",
+      "ref": "And at Sierra Gorda, we actually have, um, uh, huge machines, uh, that are also, um, electrical, but, um, they, um, have to load vehicles that, um, have capacity of 250 tons.",
+      "hyp": "At Sierra Gorda, we actually have huge machines that are also electrical, but they have to load vehicles that have capacity of 250 tons. So"
+    },
+    {
+      "id": "4485244/234.wav",
+      "corpus": "earnings22",
+      "ref": "And so individual investors are less than 5% and by our research, we actually think that number is in around two or 3%.",
+      "hyp": "And so, individual investors are less than five percent. And by our research, we actually think that number is in around two to three percent."
+    },
+    {
+      "id": "4450488/118.wav",
+      "corpus": "earnings22",
+      "ref": "That happens in the US and in Poland, um, for, um, silver.",
+      "hyp": "What happens in the U.S. and in Poland for silver?"
+    },
+    {
+      "id": "4479741/375.wav",
+      "corpus": "earnings22",
+      "ref": "So if you can clarify if there is any unwind here to be expected in Q2 or if it was just no repeatable benefits in Q1?",
+      "hyp": "So, if you can clarify, if there is any unwind here to be expected in Q2, or if it was just no repeatable benefits in Q1."
+    },
+    {
+      "id": "4485244/274.wav",
+      "corpus": "earnings22",
+      "ref": "I was wondering if you could let us know, what is your rate assumption that you have that sort of supports your sort of 12 to 13% ROE, uh, for, uh, Global Atlantic.",
+      "hyp": "Moment, I was wondering if you could let us know what is your rate assumption that you have that sort of supports your sort of 12 to 13% ROE for Global Atlantic and."
+    },
+    {
+      "id": "4470290/24.wav",
+      "corpus": "earnings22",
+      "ref": "As a result, we reported sequential increases of 34% in gross booking, and 44% in transactions.",
+      "hyp": "As a result, we reported sequential increases of 34% in gross bookings and 44% in transactions."
+    },
+    {
+      "id": "4483338/423.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, we do see a bit more wage inflation in- in the Baltics, uh, that kind of goes with the- the overall, um, growth in the\u2026",
+      "hyp": "We do see a bit more wage inflation in in the Baltics. That kind of goes with the overall growth in the."
+    },
+    {
+      "id": "4485244/54.wav",
+      "corpus": "earnings22",
+      "ref": "Our real estate platform continues to see robust deployment with real estate credit, particularly operating a high run rate and that's been amplified by Global Atlantic.",
+      "hyp": "Our real estate platform continues to see robust deployment with real estate credit, particularly operating a high run rate, and that's been amplified by global."
+    },
+    {
+      "id": "4483338/399.wav",
+      "corpus": "earnings22",
+      "ref": "Yes, Stefan and Stefan actually.",
+      "hyp": "Yes, Stefan and Stefan actually. So."
+    },
+    {
+      "id": "4450488/307.wav",
+      "corpus": "earnings22",
+      "ref": "We have lower energy consumption.",
+      "hyp": "We have lower energy consumption."
+    },
+    {
+      "id": "4483338/522.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, we will continue to do that, uh, also this year.",
+      "hyp": "We will continue to do that also this year."
+    },
+    {
+      "id": "4483338/147.wav",
+      "corpus": "earnings22",
+      "ref": "At the same time, we are able to guide on mid-single-digit growth in underlying EBITDAaL despite less, uh, contribution in 2022 from cost savings, which I will talk about on the next slide, demonstrating the long term growth journey that we have embarked upon.",
+      "hyp": "At the same time, we are able to guide on mid-single-digit growth in underlying EBITDA, despite less contribution in 2002 from cost savings, which I will talk about on the next slide, demonstrating the long-term growth journey that we have embarked upon."
+    },
+    {
+      "id": "4483338/115.wav",
+      "corpus": "earnings22",
+      "ref": "Secondly, the timing of an accounts payable was favorable in the quarter, where we expect to see the opposite effect in Q1 2022.",
+      "hyp": "Secondly, the timing of an accounts payable was favourable in the quarter, but we expect to see the opposite effect in Q1 2022."
+    },
+    {
+      "id": "4450488/18.wav",
+      "corpus": "earnings22",
+      "ref": "I cannot deny that.",
+      "hyp": "I cannot deny that."
+    },
+    {
+      "id": "4432298/172.wav",
+      "corpus": "earnings22",
+      "ref": "Our next question is from phonetic Keenram Jeffries.",
+      "hyp": "Our next question is from Keen Rao."
+    },
+    {
+      "id": "4450488/38.wav",
+      "corpus": "earnings22",
+      "ref": "Most importantly, this is happening without any new, major new, capital expenditures.",
+      "hyp": "Most importantly, this is happening without any new major new capital expenditures."
+    },
+    {
+      "id": "4485244/244.wav",
+      "corpus": "earnings22",
+      "ref": "And again, we're organized by geography here.",
+      "hyp": "And again, we're organized by geography here, and."
+    },
+    {
+      "id": "4479741/40.wav",
+      "corpus": "earnings22",
+      "ref": "Health and nutrition recovered after a very soft quarter, reaching 13% organic growth in Q1.",
+      "hyp": "Health and nutrition recovered after a very soft quarter, reaching 13% organic growth in Q1."
+    },
+    {
+      "id": "4450488/350.wav",
+      "corpus": "earnings22",
+      "ref": "So we are trying to, um, regroup and we are transforming our electricity consumption and we are trying to optimize consumption wherever possible.",
+      "hyp": "So we are trying to regroup, and we are transforming our electricity consumption, and we are trying to optimize consumption wherever possible."
+    },
+    {
+      "id": "4485244/561.wav",
+      "corpus": "earnings22",
+      "ref": "That deployment does not include, uh, Global Atlantic's.",
+      "hyp": "That deployment does not include a global Atlantic."
+    },
+    {
+      "id": "4479741/75.wav",
+      "corpus": "earnings22",
+      "ref": "The free cash flow before acquisitions and special items came in at EUR 55 million compared to a negative of EUR 7 million in Q1 of last year.",
+      "hyp": "The free cash flow before acquisitions and specializations came in at 55 million euro, compared to a negative of 7 million euro in Q1 of last year."
+    },
+    {
+      "id": "4450488/31.wav",
+      "corpus": "earnings22",
+      "ref": "In spite of, uh, lower prices, we were able to show you much better financial results, uh, improvement on EBITDA, improvement of production volumes.",
+      "hyp": "In spite of lower prices, we were able to show you much better financial results, improvement on abida, improvement on production volumes."
+    },
+    {
+      "id": "4485244/323.wav",
+      "corpus": "earnings22",
+      "ref": "Because rising .",
+      "hyp": "I think is it right."
+    },
+    {
+      "id": "4479741/160.wav",
+      "corpus": "earnings22",
+      "ref": "Or is it more function of you, uh, preferring to be conservative in a, in a scenario where where visibility might not be so big.",
+      "hyp": "Or is it more a function of you preferring to be conservative in a in a scenario where visibility might not be so big?"
+    },
+    {
+      "id": "4479741/190.wav",
+      "corpus": "earnings22",
+      "ref": "I'm just trying to So a couple-\u2026",
+      "hyp": "I'm just trying to."
+    },
+    {
+      "id": "4450488/30.wav",
+      "corpus": "earnings22",
+      "ref": "But three years of very intense work of the Management Board and, uh, people who are responsible for Sierra Gorda, both Polish people and Chileans, uh, that are, and in the headquarters of the company, uh, \u2026",
+      "hyp": "But three years of very intense work of the management board and people who are responsible for Sierra Gorda, both Polish people and Chileans, there and in the headquarters of the company, brought fruit."
+    },
+    {
+      "id": "4485244/483.wav",
+      "corpus": "earnings22",
+      "ref": "Thanks for taking my question.",
+      "hyp": "Thanks for taking my question."
+    },
+    {
+      "id": "4479741/151.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you.",
+      "hyp": "Thank you."
+    },
+    {
+      "id": "4450488/157.wav",
+      "corpus": "earnings22",
+      "ref": "But there are some other price factors that are beyond our control, like the much higher prices of diesel fuel and natural gas.",
+      "hyp": "But there are some other price factors that are beyond our control, like the much higher prices of diesel fuel and the natural gas."
+    },
+    {
+      "id": "4432298/180.wav",
+      "corpus": "earnings22",
+      "ref": "I would imagine at least after July and August as those are holiday periods but, uh, please guide me if that's wrong.",
+      "hyp": "I would imagine, at least after July and August, as those are holiday periods. But please guide me if that's wrong."
+    },
+    {
+      "id": "4450488/94.wav",
+      "corpus": "earnings22",
+      "ref": "We managed to sign, um, the agreement at the very early stage.",
+      "hyp": "We managed to sign the agreement at a very early stage."
+    },
+    {
+      "id": "4483338/527.wav",
+      "corpus": "earnings22",
+      "ref": "I think, you know, customer value management, you probably pick it up also as the operator, is- is really a way to go as you go into a converged strategy.",
+      "hyp": "I think, you know, customer value management. You probably pick it up. Also, that other operators is is really a way to go as you go into a converged strategy."
+    },
+    {
+      "id": "4479741/302.wav",
+      "corpus": "earnings22",
+      "ref": "Are you, are you expecting any pockets of slowdown due to this, in- inflation at all?",
+      "hyp": "Year, are you expecting any pockets of slowdown due to this inflation at all?"
+    },
+    {
+      "id": "4450488/81.wav",
+      "corpus": "earnings22",
+      "ref": "That is becoming a significant element of our production.",
+      "hyp": "That is becoming a significant element of our production, but."
+    },
+    {
+      "id": "4479741/299.wav",
+      "corpus": "earnings22",
+      "ref": "The first one just on, uh pricing of the input cost inflation.",
+      "hyp": "The first one, just on pricing to offset input cost inflation."
+    },
+    {
+      "id": "4483338/490.wav",
+      "corpus": "earnings22",
+      "ref": "Tele2 has a history of being a very successful challenger.",
+      "hyp": "Talitoo has a history of being a very successful challenger, and."
+    },
+    {
+      "id": "4479741/10.wav",
+      "corpus": "earnings22",
+      "ref": "Our EBIT margin before special items was 24.4% compared to 25.2% last year.",
+      "hyp": "Our EBIT margin before special items was 24.4%, compared to 25.2% last year."
+    },
+    {
+      "id": "4479741/133.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, two questions first regarding, uh, the input cost.",
+      "hyp": "Two questions. First, regarding the input cost."
+    },
+    {
+      "id": "4450488/308.wav",
+      "corpus": "earnings22",
+      "ref": "Very soon we will go out to, to the market with an acquisition process, uh, um, apart from what we are, uh, working on, we want to acquire processes, uh, projects that are already prepared for development.",
+      "hyp": "Very soon we will go out to the market with an acquisition process. Apart from what we are working on, we want to acquire processes, projects that are already prepared for development."
+    },
+    {
+      "id": "4483338/500.wav",
+      "corpus": "earnings22",
+      "ref": "And on on the rollout of the 5G, it's- it's moving ahead.",
+      "hyp": "And on on the rollout of the 5G, it's it's moving ahead."
+    },
+    {
+      "id": "4450488/303.wav",
+      "corpus": "earnings22",
+      "ref": "We will start one, uh, eight megawatt investment then we will start another of six megawatt and two smaller ones.",
+      "hyp": "We will start one eight megawatt investment. Then we will start another of six megawatt and two smaller ones."
+    },
+    {
+      "id": "4432298/281.wav",
+      "corpus": "earnings22",
+      "ref": "Is it all gonna be free or all paid for?",
+      "hyp": "Is it all going to be free, or all paid for?"
+    },
+    {
+      "id": "4483338/436.wav",
+      "corpus": "earnings22",
+      "ref": "I think we can, you can expect, uh, overall those agreements to end up in the area of two, maybe 2.5%.",
+      "hyp": "I think we can. You can expect overall those agreements to end up in the area of."
+    },
+    {
+      "id": "4479741/226.wav",
+      "corpus": "earnings22",
+      "ref": "We, we, we, we would like to avoid to give you absolute numbers on the revenue from, from HMO.",
+      "hyp": "Be clear. We we we would like to avoid to give you absolute numbers on the revenue from from HMO."
+    },
+    {
+      "id": "4470290/103.wav",
+      "corpus": "earnings22",
+      "ref": "Despite ongoing volatility and some macro , our longterm vision is if anything, in sharper focus.",
+      "hyp": "Despite ongoing volatility and some macro uncertainties, our long-term vision is, if anything, in sharper focus."
+    },
+    {
+      "id": "4485244/71.wav",
+      "corpus": "earnings22",
+      "ref": "Our net transaction and modern fees were primarily driven by our capital markets franchise this quarter, which earned $320 million.",
+      "hyp": "Our net transaction and monitoring fees were primarily driven by our capital markets franchise this quarter, which earned $320 million."
+    },
+    {
+      "id": "4483338/47.wav",
+      "corpus": "earnings22",
+      "ref": "This, coupled with FX headwinds in Sweden and increased inflation, particularly in the Baltics, resulted in an underlying EBITDAaL growth of 1.3% in the quarter.",
+      "hyp": "This, coupled with FX headwinds in Sweden and increased inflation, particularly in the Baltics, resulted in an underlying EBITDA growth of 1.3% in the quarter."
+    },
+    {
+      "id": "4479741/427.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you very much.",
+      "hyp": "I think."
+    },
+    {
+      "id": "4432298/58.wav",
+      "corpus": "earnings22",
+      "ref": "At the same time, the total value of provisions among the short term liabilities increased by 14 millions .",
+      "hyp": "At the same time, the total value of provisions among the short-term liabilities increased by 40 million zlotys."
+    },
+    {
+      "id": "4450488/144.wav",
+      "corpus": "earnings22",
+      "ref": "Now, the net uh, income, the net result of the Capital Group was up to 4,723,000,000 the main driving factor was um, again, increased revenue.",
+      "hyp": "Now, the net income, the net result of the capital group, was up to four billion seven hundred twenty-three million. The main driving factor was again increased revenue."
+    },
+    {
+      "id": "4479741/98.wav",
+      "corpus": "earnings22",
+      "ref": "And with this, I would like to hand back over to Mauricio to present our new climate target.",
+      "hyp": "And with this, I would like to hand back over to Mauricio to present our new climate."
+    },
+    {
+      "id": "4485244/379.wav",
+      "corpus": "earnings22",
+      "ref": "And so there's a lot of momentum, uh, across that part of our business.",
+      "hyp": "And so there's a lot of momentum across that part of our business. Great."
+    },
+    {
+      "id": "4483338/160.wav",
+      "corpus": "earnings22",
+      "ref": "The program remains back end loaded in the year, and we expect to reach the majority of the remaining annual ra- run rate in 2022.",
+      "hyp": "The program remains backloaded in the year, and we expect to reach the majority of the remaining annual run rate in 2022."
+    },
+    {
+      "id": "4483338/113.wav",
+      "corpus": "earnings22",
+      "ref": "Working capital was strong in the quarter as we saw three separate items that had a positive impact.",
+      "hyp": "Working capital was strong in the quarter as we saw three separate items that had a positive impact. First."
+    },
+    {
+      "id": "4483338/616.wav",
+      "corpus": "earnings22",
+      "ref": "So, we are making these judgment calls and, um, I'm pretty positive about the- the outlook.",
+      "hyp": "So we're making these judgment calls, and I'm pretty positive about the outlook. So."
+    },
+    {
+      "id": "4450488/92.wav",
+      "corpus": "earnings22",
+      "ref": "Th- this is, uh, the effect of both good management of the mine and of, uh, um, processing plants in Sierra Gorda.",
+      "hyp": "This is the effect of both good management of the mine and of processing plants in Sierra Gorda."
+    },
+    {
+      "id": "4483338/494.wav",
+      "corpus": "earnings22",
+      "ref": "And what Hendrik brings to to the business here, he brings many things.",
+      "hyp": "And what Hendrik brings to the business here, it brings many things, but."
+    },
+    {
+      "id": "4485244/202.wav",
+      "corpus": "earnings22",
+      "ref": "How are you thinking about the buyback at this level, uh, for the share price, and should we be thinking about acceleration and share purchases from here?",
+      "hyp": "How are you thinking about the buyback at this level for the share price, and should we be thinking about acceleration and share repurchases from here?"
+    },
+    {
+      "id": "4485244/370.wav",
+      "corpus": "earnings22",
+      "ref": "Um, you know, very broad base again, I think when you look at a lot of the, you know, core is an example area for us, um, in, from a perpetual standpoint where we're raising capital infrastructure real estate, as I mentioned two aspects of, uh, of, of both Europe and Asia, real estate perpetual or capital is, is gonna be pe- perpetual in nature.",
+      "hyp": "You know, very broad-based. Again, I think when you look at a lot of the, you know, core is an example area for us. In from a perpetual standpoint, where we're raising capital, infrastructure, real estate, as I mentioned, the next two aspects of of both Europe and Asia, real estate perpetual or capital is is going to be perpetual in nature."
+    },
+    {
+      "id": "4485244/381.wav",
+      "corpus": "earnings22",
+      "ref": "That's, that's helpful.",
+      "hyp": "That's helpful, and."
+    },
+    {
+      "id": "4450488/13.wav",
+      "corpus": "earnings22",
+      "ref": "We have a few, uh, pieces of good news about the operations of the company in the first half of 2021.",
+      "hyp": "We have a few pieces of good news about the operations of the company in the first half of 2021."
+    },
+    {
+      "id": "4485244/128.wav",
+      "corpus": "earnings22",
+      "ref": "We were early to Asia and we've seen significant scaling as AUM across our Asia dedicated strategies has gone from $20 billion to $42 billion over the last two years with private equity being the biggest driver of that growth.",
+      "hyp": "We were early in Asia, and we've seen significant scaling as AUM across our Asia dedicated strategies has gone from 20 billion to 42 billion over the last two years, with private equity being the biggest driver of that growth."
+    },
+    {
+      "id": "4483338/211.wav",
+      "corpus": "earnings22",
+      "ref": "You saw we had a huge uptick in our EBITDAaL in the first part of ' 21.",
+      "hyp": "You saw we had a huge uptick in our EBITDA in the first part of '21."
+    },
+    {
+      "id": "4450488/234.wav",
+      "corpus": "earnings22",
+      "ref": "It needs to transform both in the context of\u2026",
+      "hyp": "It needs to transform both in the context of."
+    },
+    {
+      "id": "4470290/95.wav",
+      "corpus": "earnings22",
+      "ref": "Brazil led the recovery with gross bookings up 126% sequentially, but still 60% below ' 19 levels.",
+      "hyp": "Brazil led the recovery with gross bookings up 126% sequentially, but still 60% below 19 levels."
+    },
+    {
+      "id": "4479741/84.wav",
+      "corpus": "earnings22",
+      "ref": "Food cultures and enzymes is expected to deliver solid mid-single digits organic growth throughout the year and despite an insignificant contributions from Euro based pricing.",
+      "hyp": "Food cultures and enzymes is expected to deliver solid mid-single digits organic growth throughout the year, and despite an insignificant contribution from euro-based pricing."
+    },
+    {
+      "id": "4479741/127.wav",
+      "corpus": "earnings22",
+      "ref": "You can then rejoin the queue to ask further questions if you need to.",
+      "hyp": "You can then rejoin the queue to ask further questions if you need to."
+    },
+    {
+      "id": "4432298/318.wav",
+      "corpus": "earnings22",
+      "ref": "And the second, and what are you seeing with recently on employees chair?",
+      "hyp": "And the second, and what are you seeing recently on employees' chat?"
+    },
+    {
+      "id": "4485244/565.wav",
+      "corpus": "earnings22",
+      "ref": "Yep. Thanks. Thank you.",
+      "hyp": "Yeah."
+    },
+    {
+      "id": "4483338/464.wav",
+      "corpus": "earnings22",
+      "ref": "Okay.",
+      "hyp": "Market. Okay, thank."
+    },
+    {
+      "id": "4432298/322.wav",
+      "corpus": "earnings22",
+      "ref": "All right the next question from , do you observe significantly increase and turn over after after the annual bonuses?",
+      "hyp": "All right. The next question from Piotr Opatych, Pika OBP. Do you observe significant increase in employee turnover after paying out of the annual bonuses?"
+    },
+    {
+      "id": "4485244/453.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, I think smart M&A is gonna continue to play a real role here.",
+      "hyp": "I think smart M&A is going to continue to play a real role here. Not."
+    },
+    {
+      "id": "4479741/403.wav",
+      "corpus": "earnings22",
+      "ref": "I just wanted to check I heard that right, um, because does your pricing model protect the gross profit or the gross profit margin?",
+      "hyp": "I just wanted to check. I heard that right, because does your pricing model protect the gross profit or the gross profit margin?"
+    },
+    {
+      "id": "4450488/348.wav",
+      "corpus": "earnings22",
+      "ref": "I think that, uh, I addressed the first question already in terms of electricity prices and the prices of the natural gas and the impact of, uh, that on our business.",
+      "hyp": "I think that I addressed the first question already in terms of electricity prices and prices of the natural gas and the impact of that on our business."
+    },
+    {
+      "id": "4470290/147.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you.",
+      "hyp": "Thank you."
+    },
+    {
+      "id": "4470290/112.wav",
+      "corpus": "earnings22",
+      "ref": "Finally, we are in conversation with several suppliers across the region to expand our vacation rental inventory, to meet current higher demand in this third segment.",
+      "hyp": "Finally, we are in conversation with several suppliers across the region to expand our vacation rental inventory to meet current higher demand in this product segment."
+    },
+    {
+      "id": "4432298/116.wav",
+      "corpus": "earnings22",
+      "ref": "Please note that uh, the revenues we present are the revenues we achieve from our distributors.",
+      "hyp": "Please note that the revenues we present are the revenues we achieve from our distributors."
+    },
+    {
+      "id": "4479741/470.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you.",
+      "hyp": "Thank you."
+    },
+    {
+      "id": "4485244/531.wav",
+      "corpus": "earnings22",
+      "ref": "Yeah, I think, I think part of it is, let me take it back to kind of the strategy that we laid out last April, which is that, you know, we said that we only wanted to be in businesses where we thought we already were or could get to be top three in the world, and we wanted to stay focused in those areas.",
+      "hyp": "Yeah, I think I think part of it is let me take it back to kind of the strategy that we laid out last April, which is that you know we said that we only wanted to be in businesses where we thought we already were or could get to be top three in the world, and we wanted to stay focused in those areas."
+    },
+    {
+      "id": "4479741/78.wav",
+      "corpus": "earnings22",
+      "ref": "And cash flow use for operational investing activities was EUR 18 million, down from EUR 52 million in FY ' 21.",
+      "hyp": "And cash flow used for operational investing activities was 18 million euros, down from 52 million euros in FY 21."
+    },
+    {
+      "id": "4485244/309.wav",
+      "corpus": "earnings22",
+      "ref": "Okay.",
+      "hyp": "Okay."
+    },
+    {
+      "id": "4483338/601.wav",
+      "corpus": "earnings22",
+      "ref": "So yes, you need campaigns to drive it.",
+      "hyp": "So yes, you need campaigns to drive it, of course."
+    },
+    {
+      "id": "4479741/176.wav",
+      "corpus": "earnings22",
+      "ref": "So- so for sure, an encouraging start of the year with good momentum across our two business areas.",
+      "hyp": "So, so for sure, a encouraging start of the year with good momentum across our two business areas."
+    },
+    {
+      "id": "4432298/60.wav",
+      "corpus": "earnings22",
+      "ref": "Over the first quarter of 2021 we also reported an increase in our liabilities.",
+      "hyp": "Over the first quarter of 2021, we also reported an increase in our liabilities."
+    },
+    {
+      "id": "4450488/354.wav",
+      "corpus": "earnings22",
+      "ref": "So the cost of electricity was up by 100, 2 million laries, 70s because of the higher power price, 77 million up because of the ETS prices and, uh, and 90 million up because of the increase in, uh, natural gas and diesel fuel prices.",
+      "hyp": "So the cost of electricity was up by 102 million zlaris, 70 because of the higher power price, 77 million up because of the ETS prices, and and 90 million up because of the increase in natural gas and diesel fuel prices. So."
+    },
+    {
+      "id": "4479741/232.wav",
+      "corpus": "earnings22",
+      "ref": "next question comes from the line of Georgina Frazer at Goldman Sachs.",
+      "hyp": "Our next question comes from the line of Georgina."
+    },
+    {
+      "id": "4450488/198.wav",
+      "corpus": "earnings22",
+      "ref": "And many times these are our multi annual projects.",
+      "hyp": "And many times, these are multiannual projects."
+    },
+    {
+      "id": "4479741/424.wav",
+      "corpus": "earnings22",
+      "ref": "Yeah, that's crosstalk- I think under more normal conditions, we would usually have, uh, uh, one round of negotiation with customers.",
+      "hyp": "Customers, I think, under more normal conditions, we would usually have one round of negotiation with customers."
+    },
+    {
+      "id": "4483338/345.wav",
+      "corpus": "earnings22",
+      "ref": "Um, just a question related to, again, to the transformation program, but the, um, the internal side of it.",
+      "hyp": "Just a question related to again to the transformation program, but the internal side of it."
+    },
+    {
+      "id": "4483338/31.wav",
+      "corpus": "earnings22",
+      "ref": "And we were able to achieve a very good valuation for the company.",
+      "hyp": "And we were able to achieve a very good valuation for the company."
+    },
+    {
+      "id": "4450488/121.wav",
+      "corpus": "earnings22",
+      "ref": "We had to stock up some products, uh, before the 13th of June when we were closing the books for the quarter.",
+      "hyp": "We had to stock up some products before the 30th of June when we were closing the books for the quarter."
+    },
+    {
+      "id": "4485244/37.wav",
+      "corpus": "earnings22",
+      "ref": "There are very few long dated pools of capital as large as ours that can take advantage of dislocations.",
+      "hyp": "There are very few long-dated pools of capital as large as ours that can take advantage of dislocations, and."
+    },
+    {
+      "id": "4450488/339.wav",
+      "corpus": "earnings22",
+      "ref": "Yes.",
+      "hyp": "Yes, we are."
+    },
+    {
+      "id": "4485244/161.wav",
+      "corpus": "earnings22",
+      "ref": "You may press star two if you'd like to remove your question from the queue.",
+      "hyp": "You may press star two if you'd like to remove your question from the queue."
+    },
+    {
+      "id": "4450488/505.wav",
+      "corpus": "earnings22",
+      "ref": "Let's hope we will meet again, uh, next quarter, hopefully with a bigger number of participants.",
+      "hyp": "Let's hope we will meet again next quarter. Hopefully, with a bigger number of participants."
+    },
+    {
+      "id": "4483338/358.wav",
+      "corpus": "earnings22",
+      "ref": "These things are never super easy, but, uh, there has not been any kind of red or even orange flags coming up there.",
+      "hyp": "These things are never super easy, but there hasn't been any kind of red or even orange flags coming up there."
+    },
+    {
+      "id": "4485244/517.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you for all the color.",
+      "hyp": "Thank you, Paulie."
+    },
+    {
+      "id": "4479741/207.wav",
+      "corpus": "earnings22",
+      "ref": "Where I understand that you say that the growth will now be more front and loaded for the full year.",
+      "hyp": "Where I understand that you say that the growth will now be more front-end loaded for the full year."
+    },
+    {
+      "id": "4483338/208.wav",
+      "corpus": "earnings22",
+      "ref": "And we talk a lot about the sales and marketing cost.",
+      "hyp": "And we talk a lot about the sales and marketing costs."
+    },
+    {
+      "id": "4450488/284.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, this is being assessed by our potential bias, uh, of, uh, those assets.",
+      "hyp": "This is being assessed by our potential buyers of those assets."
+    },
+    {
+      "id": "4485244/452.wav",
+      "corpus": "earnings22",
+      "ref": "So not just the existing 28, but you're gonna see more things from us in terms of other ways that we can grow.",
+      "hyp": "So not just the existing 28, but you're going to see more things from us in terms of other ways that we can grow."
+    },
+    {
+      "id": "4432298/29.wav",
+      "corpus": "earnings22",
+      "ref": "It's worth mentioning that due to the nonexistence of Cyberpunk on the Sony Digital store, which is potentially the second biggest marketplace for us.",
+      "hyp": "It's worth mentioning that due to the non-existence of Cyberpunk on the Sony Digital Store, which is potentially the second biggest marketplace for us."
+    },
+    {
+      "id": "4432298/154.wav",
+      "corpus": "earnings22",
+      "ref": "So, within Q1 I am not aware of a permanent mark-down, there's been a bunch of uh, promotion- promotional, uh, uh mark-downs happening both in physical and in digital.",
+      "hyp": "So, within Q1, I am not aware of a permanent markdown. There's been a bunch of promotional markdowns happening, both in physical and in digital."
+    },
+    {
+      "id": "4450488/74.wav",
+      "corpus": "earnings22",
+      "ref": "So, the initiative that w- link to making, uh, that deposit available, um, extraction, uh, where the functioning of the entire mining complex, transportation, processing, and so on and so forth, all that functions smoothly.",
+      "hyp": "So the initiatives that were linked to making the deposit available, extraction, were the functioning of the entire mining complex, transportation, processing, and so on and so forth. All that functions smoothly."
+    },
+    {
+      "id": "4485244/114.wav",
+      "corpus": "earnings22",
+      "ref": "So similarly, while we saw meaningful step up in balance sheet realizations in 2021, our embedded gains increased over 50%.",
+      "hyp": "So similarly, while we saw a meaningful step up in balance sheet realizations in 2021, our embedded gains increased over 50%."
+    },
+    {
+      "id": "4485244/9.wav",
+      "corpus": "earnings22",
+      "ref": "Good morning everyone.",
+      "hyp": "Good morning, everyone."
+    },
+    {
+      "id": "4483338/420.wav",
+      "corpus": "earnings22",
+      "ref": "Well, um, the wage inflation in Sweden is pretty much determined by, uh, the central negotiations.",
+      "hyp": "Well, the wage inflation in Sweden is pretty much determined by the central negotiations."
+    },
+    {
+      "id": "4483338/344.wav",
+      "corpus": "earnings22",
+      "ref": "Um, morning guys?",
+      "hyp": "Only guys."
+    },
+    {
+      "id": "4479741/307.wav",
+      "corpus": "earnings22",
+      "ref": "Thanks.",
+      "hyp": "Thanks."
+    },
+    {
+      "id": "4483338/103.wav",
+      "corpus": "earnings22",
+      "ref": "However, this is still not close to the roaming levels that we saw prior to the pandemic.",
+      "hyp": "However, this is still not close to the roaming levels that we saw prior to the pandemic."
+    },
+    {
+      "id": "4485244/201.wav",
+      "corpus": "earnings22",
+      "ref": "Um, given your comments around the robustness of business going forward, obviously lots of capacity on the balance sheet given realizations and, and embedded gains.",
+      "hyp": "Given your comments around the robustness of business going forward, obviously lots of capacity on the balance sheet, given realizations and embedded gains, how"
+    },
+    {
+      "id": "4450488/225.wav",
+      "corpus": "earnings22",
+      "ref": "So all these projects um, have been delivered um, as scheduled.",
+      "hyp": "So, all these projects have been delivered as scheduled."
+    },
+    {
+      "id": "4450488/126.wav",
+      "corpus": "earnings22",
+      "ref": "O- we can tell that, um, it went up from 1.6 to $1.89 per, um, pound, but there's a number of, um, factors that, uh, contributed to that.",
+      "hyp": "We can tell that it went up from 1.6 to 1.89 dollar per pound, but there's a number of factors that contributed to that."
+    },
+    {
+      "id": "4479741/196.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, most of those orders being secured by our long term contracts.",
+      "hyp": "Most of those orders being secured by our long-term contracts."
+    },
+    {
+      "id": "4450488/204.wav",
+      "corpus": "earnings22",
+      "ref": "Therefore, you may expect to see a growing production.",
+      "hyp": "Therefore, you may expect to see a growing production."
+    },
+    {
+      "id": "4450488/109.wav",
+      "corpus": "earnings22",
+      "ref": "foreign language So speaking of, um, our financial performance, uh, let me start with the revenue.",
+      "hyp": "So, speaking of our financial performance, let me start with the revenue."
+    },
+    {
+      "id": "4470290/23.wav",
+      "corpus": "earnings22",
+      "ref": "Thus, our international transactions increased 120% sequentially coming from very low levels.",
+      "hyp": "Thus, our international transactions increased 120% sequentially, coming from very low levels."
+    },
+    {
+      "id": "4479741/243.wav",
+      "corpus": "earnings22",
+      "ref": "Um, I will take the first part of your question in relation to what part of the uh, growth on health and nutrition was sort of underlying growth vs um, a one off and then I'll pass it on to Lisa in relation to the, uh infant formula, uh in market potential.",
+      "hyp": "Good morning. I'll take the first part of your question in relation to what part of the growth on health and nutrition was sort of underlying growth versus one-offs, and then I'll pass it on to Lisa in relation to the infant formula and market potential."
+    },
+    {
+      "id": "4485244/269.wav",
+      "corpus": "earnings22",
+      "ref": "Our next question comes from line of Bill Katz with Citi.",
+      "hyp": "The question comes from line of."
+    },
+    {
+      "id": "4470290/97.wav",
+      "corpus": "earnings22",
+      "ref": "Second EBITDA, excluding cancellations, we neared break even, even with gross bookings still 44% below ' 19 levels, as the initiatives implemented since the start of the pandemic have significantly strengthened the earnings power of the company.",
+      "hyp": "Second, EBITDA excluding cancellations near breakeven, even with gross bookings still 44% below 19 levels, as the initiatives implemented since the start of the pandemic have significantly strengthened the earnings power of the company. These."
+    },
+    {
+      "id": "4479741/271.wav",
+      "corpus": "earnings22",
+      "ref": "Could you explain why that was and um, will that, uh improve you know as you lift pricing in the coming quarters?",
+      "hyp": "Could you explain why that was, and will that improve as we, you know, as you lift pricing in in the coming quarters?"
+    },
+    {
+      "id": "4485244/555.wav",
+      "corpus": "earnings22",
+      "ref": "And just on the regulatory point, just, just any sort of thoughts there around potential for, uh, regulatory changes, enhanced transparency around fees, et cetera?",
+      "hyp": "And just on the regulatory point, just just any sort of thoughts there around potential for regulatory changes, enhanced transparency around fees, etc."
+    },
+    {
+      "id": "4485244/355.wav",
+      "corpus": "earnings22",
+      "ref": "Great.",
+      "hyp": "Great."
+    },
+    {
+      "id": "4479741/452.wav",
+      "corpus": "earnings22",
+      "ref": "But maybe you can comment a bit, there must have been some delays in delivering on these sort of, uh, overall ambitions you have had there and because of COVID.",
+      "hyp": "But maybe you can comment a bit. There must have been some delays in delivering on these sort of overall ambitions you have had there, and because of COVID."
+    },
+    {
+      "id": "4485244/32.wav",
+      "corpus": "earnings22",
+      "ref": "And the other neat point about that $121 billion is that 45% of it came from strategies that didn't exist at KKR five years ago.",
+      "hyp": "And the other neat point about that 121 billion is that 45% of it came from strategies that didn't exist at KKR five years ago. We."
+    },
+    {
+      "id": "4470290/144.wav",
+      "corpus": "earnings22",
+      "ref": "Got it, and maybe one other followup.",
+      "hyp": "Got it. And maybe one other follow-up."
+    },
+    {
+      "id": "4450488/456.wav",
+      "corpus": "earnings22",
+      "ref": "Also, relations with trade unions, you know, this is a delicate matter in Chile, and we are, uh, nevertheless able to, uh, find common language, uh, with workers there.",
+      "hyp": "Also, relations with trade unions. This is a delicate matter in Chile, and we are nevertheless able to find a common language with workers there."
+    },
+    {
+      "id": "4479741/192.wav",
+      "corpus": "earnings22",
+      "ref": "So a couple of comments, I think I think your calculation of HMO is, um, uh, not 100% correct.",
+      "hyp": "So a couple of comments. I think your calculation of HMO is not hundred percent correct."
+    },
+    {
+      "id": "4432298/259.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you.",
+      "hyp": "Thank you."
+    },
+    {
+      "id": "4432298/167.wav",
+      "corpus": "earnings22",
+      "ref": "I would say that one third of the- of the Cyberpunk team or- or AAA content team, uh, is working on, uh, on unannounced things.",
+      "hyp": "I would say that one third of the of the cyberpunk team or AAA content team is working on on unannounced things, but."
+    },
+    {
+      "id": "4450488/68.wav",
+      "corpus": "earnings22",
+      "ref": "And we got, uh, North American mines, we are getting through areas that contain slightly less, uh, um, uh, precious metal .",
+      "hyp": "As regards North American mines, we are getting through areas that contain slightly less precious metals TPNs."
+    },
+    {
+      "id": "4470290/105.wav",
+      "corpus": "earnings22",
+      "ref": "Looking at the fourth quarter, the strong recovery observed in gross bookings in September continued into October, reaching 72% of ' 19 booking levels.",
+      "hyp": "Looking at the fourth quarter, the strong recovery observed in gross bookings in September continued into October, reaching 72% of 19 bookings."
+    },
+    {
+      "id": "4485244/373.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, that activity continues it's multi asset class.",
+      "hyp": "That activity continues. It's multi-asset class."
+    },
+    {
+      "id": "4485244/573.wav",
+      "corpus": "earnings22",
+      "ref": "It's a topical one and, you know, we're spending a lot of time internally, um, focused on it.",
+      "hyp": "It's a topical one, and you know we're spending a lot of time internally focused on it."
+    },
+    {
+      "id": "4483338/560.wav",
+      "corpus": "earnings22",
+      "ref": "And then we are on on the path of, uh, having the ambition to be stabil- stabilizing the revenue growth that you saw in the last quarter.",
+      "hyp": "And then we are on the path of having the ambition to be stabilizing the revenue growth that you saw in the last."
+    },
+    {
+      "id": "4485244/72.wav",
+      "corpus": "earnings22",
+      "ref": "This is a high point for us.",
+      "hyp": "This is a high point for us."
+    },
+    {
+      "id": "4479741/467.wav",
+      "corpus": "earnings22",
+      "ref": "For sure, you may have quarters that are higher or, or lower, but I hope that, you know, provides some, uh, some perspective, otherwise, you know, we'll be able to, um, uh, uh, elaborate on this, uh, further as we, uh, uh, talk going forward.",
+      "hyp": "For sure, you may have quarters that are higher or lower, but I hope that you know provides some some perspective. Otherwise, you know we'll be able to elaborate on this further as we are talk going."
+    },
+    {
+      "id": "4485244/380.wav",
+      "corpus": "earnings22",
+      "ref": "Great.",
+      "hyp": "That's that's."
+    },
+    {
+      "id": "4483338/276.wav",
+      "corpus": "earnings22",
+      "ref": "Ulrich, just thanks for your questions.",
+      "hyp": "Just, thanks for your questions."
+    },
+    {
+      "id": "4450488/145.wav",
+      "corpus": "earnings22",
+      "ref": "The change in the cost by type uh, is related to the fact that we need to buy more third party or because we have to increase our volume.",
+      "hyp": "The change in the costs by type is related to the fact that we need to buy more third-party ore because we have to increase our."
+    },
+    {
+      "id": "4432298/280.wav",
+      "corpus": "earnings22",
+      "ref": "And, and finally, in terms of timing of the downloadable content that Cyberpunk, what's your strategy in terms of, you know, how much content there is and into the pricing?",
+      "hyp": "And finally, in terms of timing of the downloadable content that Cyberpunk, what's your sort of strategy in terms of how much content that is and sort of pricing?"
+    },
+    {
+      "id": "4483338/592.wav",
+      "corpus": "earnings22",
+      "ref": "So, uh, when we come out end of ' 23 and early ' 24 with great coverage and great spectrum and a very strong, uh, 5G proposition, that gives us an opportunity to equalize some of that, uh, gap that you are pointing out.",
+      "hyp": "So when we come out end of 23 and early 24 with great coverage and great spectrum and a very strong 5G proposition, that gives us an opportunity to equalize some of that gap that you are pointing out."
+    },
+    {
+      "id": "4485244/141.wav",
+      "corpus": "earnings22",
+      "ref": "Thank you, Rob, and thank you everyone for joining our call today.",
+      "hyp": "Thank you, Rob, and thank you, everyone, for joining our call today."
+    },
+    {
+      "id": "4432298/293.wav",
+      "corpus": "earnings22",
+      "ref": "Oh, okay, I mean, so I don't even think we're, we're looking at this way.",
+      "hyp": "Oh, okay. I mean, so I don't even think we're looking at it this way."
+    },
+    {
+      "id": "4432298/25.wav",
+      "corpus": "earnings22",
+      "ref": "This year's first quarter results are presented together with our 2020 Q1 which by then was the best first quarter we ever had.",
+      "hyp": "This year's first quarter results are presented together with our 2020 Q1, which by then was the best first quarter we ever had."
+    },
+    {
+      "id": "4432298/175.wav",
+      "corpus": "earnings22",
+      "ref": "Uh, good good evening, sorry.",
+      "hyp": "Good evening. Sorry."
+    }
+  ]
+}

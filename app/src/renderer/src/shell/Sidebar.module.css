@@ -1,0 +1,130 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  flex: none;
+  height: 100%;
+  padding: 0 7.5px;
+  background: var(--bg-sidebar);
+  border-right: 0.5px solid var(--border-strong);
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+  height: 41px;
+  /* Clear the traffic lights (they end ~76px from the window edge). */
+  padding-left: 79px;
+  padding-top: 0.5px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.chrome + .section {
+  margin-top: 14px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+  height: 28px;
+  padding: 0 8px 0 5px;
+  border-radius: var(--radius-md);
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-base);
+  text-align: left;
+}
+
+.item:hover {
+  background: var(--fill-highlight);
+}
+
+.item[data-active] {
+  background: var(--fill-highlight);
+}
+
+.itemIcon {
+  display: inline-flex;
+  width: 18px;
+  justify-content: center;
+}
+
+.itemLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.heading {
+  margin: 21px 0 6px 7.5px;
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+/* Rows led by a 20px tile (spaces) sit slightly wider than icon rows. */
+.item[data-tile] {
+  padding-left: 3.5px;
+  gap: 6.5px;
+}
+
+.item[data-tile] .itemIcon {
+  width: 20px;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: var(--bg-tile);
+  color: var(--ink-secondary-strong);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.tools {
+  display: flex;
+  gap: 1.5px;
+  margin-bottom: 7px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  margin: 9px 3.5px 0;
+  padding: 0 0 1px 0;
+  border-top: 0.5px solid var(--border-hairline);
+  color: var(--ink-primary);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-align: left;
+}
+
+.account:hover .accountName,
+.account[data-open] .accountName {
+  color: var(--ink-strong);
+}
+
+.accountName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevrons {
+  color: var(--ink-secondary-strong);
+}

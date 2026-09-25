@@ -1,0 +1,4 @@
+# Additive alias of the host's gpt-oss 20B (tagged gpt-oss:latest there) with its full native context.
+# Ollama's OpenAI endpoint otherwise uses the default num_ctx and silently truncates long transcripts.
+FROM gpt-oss:latest
+PARAMETER num_ctx 131072

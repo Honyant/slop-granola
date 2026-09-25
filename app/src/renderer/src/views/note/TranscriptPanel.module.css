@@ -1,0 +1,164 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: min(419px, calc(100vh - 140px));
+  border-radius: 28px;
+  background: var(--bg-raised);
+  box-shadow:
+    0 0 0 0.5px var(--border-hairline),
+    var(--shadow-panel);
+  overflow: hidden;
+  animation: rise 200ms var(--ease);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 14px 12px 0 15px;
+}
+
+.flex {
+  flex: 1;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-pill);
+  background: var(--fill-highlight);
+  color: var(--ink-secondary);
+}
+
+.search input {
+  width: 200px;
+  background: none;
+  border: 0;
+  outline: none;
+  color: var(--ink-primary);
+}
+
+.search button {
+  display: inline-flex;
+  color: var(--ink-secondary);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 16px 16px 20px;
+  user-select: text;
+}
+
+.consent {
+  margin: 0 0 4px;
+  text-align: center;
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-sm);
+}
+
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--ink-primary);
+  font-weight: 500;
+}
+
+.error {
+  margin: 0 0 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: #ec755822;
+  color: var(--ink-danger);
+  font-size: var(--text-sm);
+}
+
+.speaker {
+  margin: 10px 0 -2px;
+  color: var(--ink-speaker);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.speaker:first-child {
+  margin-top: 0;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 7px 10px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--ink-primary);
+}
+
+.bubble[data-source='mic'] {
+  align-self: flex-end;
+  background: var(--bg-bubble-me);
+}
+
+.bubble[data-source='system'] {
+  align-self: flex-start;
+  background: var(--fill-highlight);
+}
+
+.bubble:not([data-final]) {
+  color: var(--ink-secondary);
+}
+
+.bubble mark {
+  background: #b2c24855;
+  color: inherit;
+  border-radius: 2px;
+}
+
+.typing {
+  display: inline-block;
+  width: 16px;
+  height: 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+  background: radial-gradient(circle, var(--ink-tertiary) 2px, transparent 2.5px) 0 50% / 6px 6px repeat-x;
+  animation: typing 1s steps(3) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 4px;
+  }
+  to {
+    width: 18px;
+  }
+}
+
+.waiting {
+  margin: 20px 0;
+  text-align: center;
+  color: var(--ink-tertiary);
+  font-size: var(--text-base);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  padding: 0 18px 0 8px;
+  border-top: 0.5px solid var(--border-hairline);
+}

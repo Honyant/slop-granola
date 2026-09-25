@@ -1,0 +1,98 @@
+@import '@fontsource-variable/inter-tight/wght.css';
+@import '@fontsource-variable/inter/opsz.css';
+@import '@fontsource/ibm-plex-serif/400.css';
+@import '@fontsource/ibm-plex-serif/500.css';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-window);
+  color: var(--ink-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  /* Granola's "book" weight: a touch heavier than regular. */
+  font-weight: 440;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  /* Granola's Inter fallback is set at optical size 28 with slightly heavier weights. */
+  font-variation-settings: 'opsz' 28;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  cursor: default;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: default;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  user-select: text;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 1px;
+}
+
+::selection {
+  background: #788c1566;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fill-highlight-strong);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -1,0 +1,166 @@
+:global(html.overlay),
+:global(html.overlay body) {
+  background: transparent;
+}
+
+.card {
+  margin: 1px;
+  padding: 7px 7px 7px 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #373737f5;
+  box-shadow: 0 0 0 0.5px #ffffff2e;
+  color: #fcfcf8;
+  animation: slide-in 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enters from and leaves to the right edge of the screen, like Granola's. */
+@keyframes slide-in {
+  from {
+    transform: translateX(calc(100% + 16px));
+  }
+}
+
+.card[data-leaving] {
+  animation: slide-out 260ms cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateX(calc(100% + 16px));
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.text {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 3px 0 7px 12px;
+  border-left: 1px solid #ffffff26;
+}
+
+.title {
+  font-size: var(--text-base);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subtitle {
+  color: #9e9e99;
+  font-size: var(--text-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.countdown {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: #ffffff47;
+  transition: width 100ms linear;
+}
+
+.actions {
+  display: flex;
+  align-items: stretch;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #ffffff1a;
+  background: #2b2b2b;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px 0 10px;
+  border-radius: 12px 0 0 12px;
+  font-size: var(--text-base);
+  color: #fcfcf8;
+  white-space: nowrap;
+}
+
+.primary:hover,
+.more:hover,
+.more[aria-expanded='true'] {
+  background: #ffffff12;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 5px;
+  background: #b2c248;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  border-left: 1px solid #ffffff1c;
+  border-radius: 0 12px 12px 0;
+  color: #acada8;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-top: 6px;
+  border-top: 0.5px solid #ffffff1f;
+}
+
+.menu button {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: var(--text-base);
+  color: #eaebe5;
+}
+
+.menu button:hover {
+  background: #ffffff12;
+}
+
+.zoom {
+  color: #4a9bff;
+}
+
+.meet {
+  color: #f5b400;
+}
+
+.teams {
+  color: #8b8df0;
+}
+
+.webex,
+.other {
+  color: #acada8;
+}
+
+/* The prompt is pointer-driven and focused programmatically on show; no ring on open. */
+.primary:focus-visible,
+.more:focus-visible {
+  outline: none;
+  background: #ffffff12;
+}

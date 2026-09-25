@@ -1,0 +1,7 @@
+node_modules/
+out/
+dist/
+resources/bin/
+test-results/
+playwright-report/
+test/visual/.private/

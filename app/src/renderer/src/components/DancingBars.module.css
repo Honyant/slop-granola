@@ -1,0 +1,17 @@
+.bars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.bar {
+  width: 3px;
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--dancing-bars);
+  transition: height 90ms linear;
+}
+
+.bars[data-active='false'] .bar {
+  background: var(--ink-tertiary);
+}

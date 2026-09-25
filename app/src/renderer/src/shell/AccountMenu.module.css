@@ -1,0 +1,77 @@
+.menu {
+  width: 255px;
+  padding: 7px;
+  /* Aligns with the sidebar's inner edge rather than the account row's. */
+  translate: -4px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 7px 10px;
+}
+
+.workspace {
+  font-size: var(--text-base);
+  color: var(--ink-primary);
+}
+
+.members {
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.invite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 27px;
+  border-radius: var(--radius-md);
+  background: var(--fill-highlight);
+  color: var(--ink-primary);
+  font-size: var(--text-base);
+}
+
+.invite:hover {
+  background: var(--fill-highlight-strong);
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 7px 6px;
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-sm);
+}
+
+.notice {
+  display: flex;
+  gap: 8px;
+  padding: 4px 7px 8px;
+  color: var(--ink-tertiary);
+  font-size: var(--text-sm);
+  line-height: 1.35;
+  border-bottom: 0.5px solid var(--border-hairline);
+  margin-bottom: 6px;
+}
+
+.notice svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  background: var(--fill-highlight);
+  font-family: inherit;
+  font-size: 11px;
+}

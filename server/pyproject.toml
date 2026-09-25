@@ -1,0 +1,52 @@
+[project]
+name = "granola-asr"
+version = "0.1.0"
+description = "Streaming transcription server for the Granola clone (docs/protocol-transcription.md)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "starlette>=0.46",
+    "uvicorn[standard]>=0.34",
+    "wsproto>=1.2",
+    "httpx>=0.28",
+    "soundfile>=0.13",
+    "soxr>=0.5",
+]
+
+[project.optional-dependencies]
+# Everything that needs a GPU host. Kept separate so the protocol tests run on a laptop.
+gpu = [
+    "torch>=2.9",
+    "torchaudio>=2.9",  # Granite Speech feature extractor
+    "librosa>=0.11",  # Parakeet feature extractor
+    "transformers>=5.17",
+    "accelerate>=1.10",
+    "onnxruntime>=1.22",
+    "silero-vad>=6.2",
+]
+# Apple Silicon: run the server on the same Mac as the app (scripts/run-local.sh).
+# silero-vad is installed separately with --no-deps: only its bundled ONNX model is used.
+mac = ["mlx>=0.32", "parakeet-mlx>=0.5", "onnxruntime>=1.22"]
+dev = ["pytest>=8", "httpx2>=2.13", "websockets>=15", "jiwer>=4", "whisper-normalizer>=0.1"]
+eval = ["datasets>=4", "jiwer>=4", "librosa>=0.11", "whisper-normalizer>=0.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # unicode look-alikes: the prose uses "…" and "×" on purpose
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["granola_asr.segmenter.SegmenterConfig"]  # frozen dataclass
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["granola_asr"]

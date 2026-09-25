@@ -1,0 +1,145 @@
+.document {
+  padding: 0 4px 200px;
+  user-select: text;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0 14px;
+  background: var(--bg-window);
+}
+
+.summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-secondary);
+  font-size: var(--text-sm);
+}
+
+.live {
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background: #74bd0026;
+  color: var(--dancing-bars);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  margin-left: auto;
+  max-width: 240px;
+  padding: 0 9px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  color: var(--ink-secondary);
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  color: var(--ink-primary);
+  font-size: var(--text-sm);
+}
+
+.search button {
+  display: inline-flex;
+  color: var(--ink-secondary);
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 11px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-sm);
+}
+
+.copy:hover:not(:disabled) {
+  background: var(--fill-highlight);
+  color: var(--ink-primary);
+}
+
+.copy:disabled {
+  opacity: 0.5;
+}
+
+.turn {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.turn + .turn {
+  border-top: 0.5px solid var(--border-hairline);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.speaker {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-secondary-strong);
+}
+
+.turn[data-source='system'] .speaker {
+  color: var(--ink-speaker);
+}
+
+.turn[data-source='mic'] .speaker {
+  color: var(--ink-accent-strong);
+}
+
+.time {
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-tertiary);
+}
+
+.text {
+  margin: 0;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--ink-primary);
+}
+
+.text span:not([data-final]) {
+  color: var(--ink-tertiary);
+}
+
+.text mark {
+  background: #b2c24855;
+  color: inherit;
+  border-radius: 2px;
+}
+
+.empty {
+  color: var(--ink-secondary);
+  font-size: var(--text-md);
+}

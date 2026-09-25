@@ -1,0 +1,151 @@
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+  padding: 9px 0 0;
+}
+
+.column {
+  width: 615px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  margin: 0 0 7px;
+  padding: 0 0 0 4px;
+  border: 0;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  background: none;
+  font-size: var(--text-display);
+  line-height: 34px;
+  color: var(--ink-primary);
+  field-sizing: content;
+}
+
+.title::placeholder {
+  color: var(--ink-tertiary);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 25px;
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 27px;
+  padding: 0 12px 0 11px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-md);
+}
+
+.metaPill:hover {
+  background: var(--fill-highlight);
+}
+
+.metaPart {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.folderButton {
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+}
+
+.people {
+  width: 260px;
+}
+
+.peopleHeading {
+  padding: 6px 9px 8px;
+  color: var(--ink-secondary);
+  font-size: var(--text-sm);
+}
+
+.segmented {
+  display: flex;
+  height: 27px;
+  padding: 2px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--border-hairline);
+}
+
+.segmented button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  color: var(--ink-secondary-strong);
+  font-size: var(--text-sm);
+}
+
+.segmented button[aria-selected='true'] {
+  background: var(--fill-highlight-strong);
+  color: var(--ink-primary);
+}
+
+.menu {
+  width: 220px;
+}
+
+.enhanced {
+  padding-bottom: 180px;
+}
+
+.enhancing {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: transparent;
+  background: linear-gradient(90deg, var(--ink-tertiary), var(--ink-primary), var(--ink-tertiary)) 0 0 / 200% 100%;
+  background-clip: text;
+  font-size: var(--text-md);
+  animation: shimmer 1.4s linear infinite;
+}
+
+.enhancing svg {
+  color: var(--ink-accent-strong);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.enhanceError {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  background: #ec755818;
+  color: var(--ink-danger);
+  font-size: var(--text-base);
+}
+
+.enhanceError span {
+  flex: 1;
+}
+
+.enhanceError button {
+  color: var(--ink-primary);
+  font-weight: 500;
+}

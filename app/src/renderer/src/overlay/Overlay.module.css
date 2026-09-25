@@ -1,0 +1,89 @@
+:global(html.overlay),
+:global(html.overlay body) {
+  background: transparent;
+}
+
+.root {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 8px 10px 10px 8px;
+}
+
+.nub {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 44px;
+  padding: 7px 0 9px;
+  border-radius: 22px;
+  background: var(--bg-overlay-panel);
+  box-shadow: 0 0 0 0.5px var(--border-strong);
+  -webkit-app-region: drag;
+}
+
+.logo,
+.bars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 30px;
+  border-radius: 15px;
+  color: var(--ink-primary);
+  -webkit-app-region: no-drag;
+}
+
+.logo:hover,
+.bars:hover {
+  background: var(--fill-highlight);
+}
+
+.panel {
+  flex: 1;
+  align-self: flex-start;
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 10px;
+  border-radius: 20px;
+  background: var(--bg-overlay-panel);
+  box-shadow: 0 0 0 0.5px var(--border-strong);
+  user-select: text;
+}
+
+.speaker {
+  margin-top: 6px;
+  color: var(--ink-speaker);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.bubble {
+  padding: 8px 11px;
+  border-radius: var(--radius-lg);
+  background: var(--fill-highlight);
+  color: var(--ink-primary);
+  font-size: var(--text-md);
+  line-height: 1.55;
+}
+
+.bubble[data-source='mic'] {
+  background: var(--fill-highlight-strong);
+  margin-left: 24px;
+}
+
+.bubble:not([data-final]) {
+  color: var(--ink-secondary);
+}
+
+.empty {
+  color: var(--ink-tertiary);
+  text-align: center;
+}
