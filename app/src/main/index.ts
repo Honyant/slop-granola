@@ -20,6 +20,7 @@ import { Enhancer } from './services/enhance'
 import { RecordingManager } from './services/recording'
 import { TrayController } from './tray'
 import { createMainWindow, OverlayWindow, PromptWindow } from './windows'
+import { registerFontScheme, serveGranolaFonts } from './fonts'
 
 const TRASH_RETENTION_MS = 30 * 24 * 3600 * 1000
 const QUIT_FLUSH_TIMEOUT_MS = 8000
@@ -31,6 +32,7 @@ const PROMPT_EXIT_MS = 300
 // belongs to the real Granola app. Tests point at a throwaway profile instead.
 app.setPath('userData', process.env.GRANOLA_USER_DATA ?? join(app.getPath('appData'), 'Granola Clone'))
 app.setName('Granola')
+registerFontScheme()
 
 if (!app.requestSingleInstanceLock()) {
   app.quit()
@@ -64,6 +66,7 @@ async function main(): Promise<void> {
   }
   const db = new Db(join(app.getPath('userData'), 'granola.db'))
   const log = (message: string) => console.log(`[granola] ${message}`)
+  serveGranolaFonts(log)
   const ctx = new AppContext(db, emit, log, keychainBox(log))
   seedSettings(ctx)
   ctx.notes.purgeTrash(Date.now() - TRASH_RETENTION_MS)

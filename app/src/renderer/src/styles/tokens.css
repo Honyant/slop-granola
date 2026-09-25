@@ -9,8 +9,9 @@
    * closest free match: same skeleton as Granola's own Inter fallback, with the
    * tighter set-width that Melange has. Inter stays as the fallback for glyphs.
    */
-  --font-body: 'Inter Tight Variable', 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'IBM Plex Serif', ui-serif, Georgia, serif;
+  /* Granola's own faces when Granola.app is installed (main/fonts.ts), else the closest open fonts. */
+  --font-body: 'KMR Melange Grotesk', 'Inter Tight Variable', 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Quadrant Notepad', 'IBM Plex Serif', ui-serif, Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --text-2xs: 11px;

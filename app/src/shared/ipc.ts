@@ -62,6 +62,8 @@ export interface Api {
     copyLink(id: string): string
     search(query: string): SearchHit[]
     stats(): UsageStats
+    /** Asks for a Granola transcript export (.txt) and imports its meetings; null if cancelled. */
+    importGranola(): { imported: number; skipped: number } | null
   }
   folders: {
     list(): Folder[]

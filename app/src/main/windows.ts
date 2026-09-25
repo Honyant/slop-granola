@@ -134,7 +134,7 @@ export class OverlayWindow {
 
 /** The "Meeting detected" / "Join meeting" prompt. Sized by its content. */
 export class PromptWindow {
-  static readonly WIDTH = 384
+  static readonly WIDTH = 412
   readonly window: BrowserWindow
   private height = 72
 

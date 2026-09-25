@@ -1,4 +1,5 @@
 // Main-process implementation of the IPC contract in shared/ipc.ts.
+import { readFile } from 'node:fs/promises'
 import { app, clipboard, dialog, ipcMain, shell } from 'electron'
 import { channel, type Api, type Implementation } from '@shared/ipc'
 import { noteLink } from '@shared/routes'
@@ -8,6 +9,7 @@ import { runHelper } from './audio/helper'
 import { eventKey } from './db/notes'
 import { complete, llmConfig } from './llm/client'
 import { testTranscription } from './transcription/providers'
+import { importGranolaExport } from './services/granolaImport'
 import type { CalendarService } from './services/calendar'
 import type { ChatService } from './services/chat'
 import type { PromptController } from './services/prompts'
@@ -79,6 +81,19 @@ export function registerIpc(services: Services): void {
 
   const api: Implementation<Api> = {
     notes: {
+      importGranola: async () => {
+        const choice = await dialog.showOpenDialog({
+          title: 'Import from Granola',
+          properties: ['openFile'],
+          filters: [{ name: 'Granola transcript export', extensions: ['txt', 'md'] }],
+        })
+        const path = choice.canceled ? undefined : choice.filePaths[0]
+        if (!path) return null
+        const result = importGranolaExport(ctx, await readFile(path, 'utf8'))
+        ctx.log(`import: ${result.imported.length} meetings imported, ${result.skipped.length} already present, from ${path}`)
+        ctx.emit('notes:changed', { ids: 'all' })
+        return { imported: result.imported.length, skipped: result.skipped.length }
+      },
       list: () => ctx.notes.list().map(withRecording),
       listInFolder: (folderId) => ctx.notes.listInFolder(folderId).map(withRecording),
       get: (id) => {

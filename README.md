@@ -62,7 +62,8 @@ npm run dev      # or: npm run dist, which builds dist/mac-arm64/Granola Clone.a
 ```
 
 macOS asks for Microphone, System Audio Recording and Calendar access the first time each
-one is used. App data lives in `~/Library/Application Support/Granola Clone`, separate
+one is used. If Granola itself is installed, the clone uses its fonts from Granola.app; otherwise it
+uses the closest open fonts. App data lives in `~/Library/Application Support/Granola Clone`, separate
 from the real Granola.
 
 ### Everything on your Mac

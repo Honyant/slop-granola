@@ -1,5 +1,5 @@
 // The "Meeting detected" / "Join meeting" prompt window.
-import { StrictMode, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { StrictMode, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ChevronDown, Video } from 'lucide-react'
 import { joinLabel, platformOf } from '@shared/meetings'
@@ -9,8 +9,8 @@ import { api, useEvent } from '@/lib/api'
 import '../styles/global.css'
 import styles from './Prompt.module.css'
 
-/** How long each prompt stays up; hovering pauses the countdown. */
-const LIFETIME_MS: Record<MeetingPrompt['kind'], number> = { detected: 15_000, upcoming: 60_000 }
+/** How long a prompt stays up, as Granola's does; hovering or the open menu pauses it. */
+const LIFETIME_MS = 15_000
 
 function PromptApp() {
   const [prompt, setPrompt] = useState<MeetingPrompt | null>(null)
@@ -34,32 +34,15 @@ function PromptApp() {
 function Prompt({ prompt, leaving = false }: { prompt: MeetingPrompt; leaving?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [hovered, setHovered] = useState(false)
-  const lifetime = LIFETIME_MS[prompt.kind]
-  const [fraction, setFraction] = useState(1)
-  const remaining = useRef(lifetime)
   const root = useRef<HTMLDivElement>(null)
   const act = (action: PromptAction) => void api.prompt.act(prompt.id, action)
-  const expire = useRef(() => act('expire'))
+  // The countdown is a CSS animation, and its end expires the prompt, so the bar and
+  // the timer cannot drift apart; pausing the animation pauses both.
   const paused = hovered || menuOpen || leaving
-
-  // Counts down while the pointer is away; resuming continues from where it paused.
-  useEffect(() => {
-    if (paused) return
-    const deadline = Date.now() + remaining.current
-    const timer = setInterval(() => {
-      remaining.current = deadline - Date.now()
-      setFraction(Math.max(0, remaining.current / lifetime))
-      if (remaining.current <= 0) {
-        clearInterval(timer)
-        expire.current()
-      }
-    }, 100)
-    return () => clearInterval(timer)
-  }, [paused, lifetime])
 
   // The window is exactly as tall as the card, so the options row can grow it.
   useLayoutEffect(() => {
-    if (root.current) void api.prompt.resize(root.current.getBoundingClientRect().height + 16)
+    if (root.current) void api.prompt.resize(root.current.getBoundingClientRect().height + 2)
   }, [menuOpen])
 
   const platform = platformOf(prompt.event?.url ?? null)
@@ -81,6 +64,11 @@ function Prompt({ prompt, leaving = false }: { prompt: MeetingPrompt; leaving?: 
       onMouseLeave={() => setHovered(false)}
     >
       <div className={styles.row}>
+        <span
+          className={styles.marker}
+          data-filled={prompt.event ? true : undefined}
+          style={prompt.event ? { background: prompt.event.color } : undefined}
+        />
         <div className={styles.text}>
           <span className={styles.title}>{title}</span>
           <span className={styles.subtitle}>{subtitle}</span>
@@ -94,7 +82,7 @@ function Prompt({ prompt, leaving = false }: { prompt: MeetingPrompt; leaving?: 
           ) : (
             <button type="button" className={styles.primary} onClick={() => act('take-notes')}>
               <span className={styles.logo}>
-                <Spiral size={15} color="#212121" strokeWidth={2.8} />
+                <Spiral size={17} color="#212121" strokeWidth={3} turns={2} />
               </span>
               Take notes
             </button>
@@ -106,11 +94,16 @@ function Prompt({ prompt, leaving = false }: { prompt: MeetingPrompt; leaving?: 
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <ChevronDown size={15} strokeWidth={1.8} />
+            <ChevronDown size={14} strokeWidth={2} />
           </button>
         </div>
       </div>
-      <span className={styles.countdown} style={{ width: `${fraction * 100}%` }} />
+      <span
+        className={styles.countdown}
+        data-paused={paused || undefined}
+        style={{ '--lifetime': `${LIFETIME_MS}ms` } as CSSProperties}
+        onAnimationEnd={() => act('expire')}
+      />
       {menuOpen && (
         <div className={styles.menu} role="menu">
           {prompt.kind === 'upcoming' && (

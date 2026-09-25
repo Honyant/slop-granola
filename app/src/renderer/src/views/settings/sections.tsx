@@ -7,6 +7,7 @@ import {
   BellRing,
   Bot,
   CalendarCheck,
+  FileInput,
   FileText,
   Globe,
   Mail,
@@ -189,9 +190,39 @@ export function PreferencesSection() {
             onChange={(defaultTemplateId) => update({ notes: { defaultTemplateId } })}
           />
         </Row>
+        <ImportGranolaRow />
       </Card>
       <PermissionsCard />
     </>
+  )
+}
+
+function ImportGranolaRow() {
+  const showToast = useUi((s) => s.showToast)
+  const [busy, setBusy] = useState(false)
+  const run = async () => {
+    setBusy(true)
+    try {
+      const result = await api.notes.importGranola()
+      if (!result) return
+      const already = result.skipped ? `, ${result.skipped} already here` : ''
+      showToast(`Imported ${result.imported} meeting${result.imported === 1 ? '' : 's'}${already}`)
+    } catch (error) {
+      showToast(errorMessage(error))
+    } finally {
+      setBusy(false)
+    }
+  }
+  return (
+    <Row
+      icon={<FileInput {...ICON} />}
+      title="Import from Granola"
+      description="Adds meetings and transcripts from a Granola transcript export (.txt)"
+    >
+      <Button size="sm" disabled={busy} onClick={() => void run()}>
+        {busy ? 'Importing…' : 'Import…'}
+      </Button>
+    </Row>
   )
 }
 

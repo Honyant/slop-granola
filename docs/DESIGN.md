@@ -180,11 +180,13 @@ items keep the secondary text colour, that nav text is 14 px not 15 px, and that
 the calendar list uses 50 pt rows. The private fixture (real names from the
 screenshots) is gitignored.
 
-**Fonts.** Granola's faces (KMR Melange Grotesk, Quadrant) are commercial and
-not redistributable. Its own CSS falls back to Inter and IBM Plex Serif, and
-this app uses Inter Tight: the same skeleton as Inter, with Melange's tighter
-set-width, which measured closest in the diffs. The book weight is 440, as
-Granola sets it.
+**Fonts.** Granola sets its UI in KMR Melange Grotesk and its titles in
+Quadrant Notepad. Both are commercial, so neither is in this repository. When
+Granola is installed, the clone loads them from Granola.app's own bundle
+(`src/main/fonts.ts` serves them through a read-only `granola-font:` scheme), so
+text matches exactly. Without Granola, the stacks fall back to Inter Tight, the
+open font that measured closest to Melange's set-width, and IBM Plex Serif. The
+book weight is 440, as Granola sets it.
 
 **Tokens, not colours.** Every colour is a semantic CSS variable taken from
 Granola's "oats" palette and checked against sampled screenshot pixels. Both

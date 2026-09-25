@@ -330,3 +330,23 @@ test('meeting detection: a mic-using app prompts, and Take notes records into th
   await page.getByRole('button', { name: 'Companies' }).click()
   await expect(page.getByRole('row', { name: /navy\.mil/ })).toBeVisible()
 })
+
+test('an unanswered prompt fills its countdown bar over 15 s, then slides away', async () => {
+  test.setTimeout(40_000)
+  const launched = (app = await launch({
+    helperFixture: { micApps: [{ afterMs: 500, apps: [{ pid: 7, name: 'Arc', bundle_id: 'company.thebrowser.Browser' }] }] },
+  }))
+  const prompt =
+    launched.app.windows().find((w) => w.url().includes('prompt')) ??
+    (await launched.app.waitForEvent('window', { predicate: (w) => w.url().includes('prompt'), timeout: 10_000 }))
+  await expect(prompt.getByText('Meeting detected')).toBeVisible()
+  const barWidth = () => prompt.locator('[class*=countdown]').evaluate((el) => el.getBoundingClientRect().width)
+  const early = await barWidth()
+  await prompt.waitForTimeout(3000)
+  expect(await barWidth()).toBeGreaterThan(early + 40) // grows from the left, not shrinking
+  const promptVisible = () =>
+    launched.app.evaluate(({ BrowserWindow }) =>
+      BrowserWindow.getAllWindows().some((w) => w.webContents.getURL().includes('prompt') && w.isVisible()),
+    )
+  await expect.poll(promptVisible, { timeout: 16_000, intervals: [500] }).toBe(false)
+})

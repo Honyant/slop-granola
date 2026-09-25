@@ -4,6 +4,63 @@
 @import '@fontsource/ibm-plex-serif/500.css';
 @import './tokens.css';
 
+/* Served from an installed Granola.app by main/fonts.ts; absent otherwise, and the stacks in tokens.css fall back. */
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-light/') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-regular/') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-book/') format('woff2');
+  font-weight: 440;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-medium/') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-semibold/') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-italic/') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'KMR Melange Grotesk';
+  src: url('granola-font://melange-semibolditalic/') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Quadrant Notepad';
+  src: url('granola-font://quadrant-regular/') format('woff2');
+  font-weight: 400;
+  font-display: block;
+}
+
 *,
 *::before,
 *::after {
