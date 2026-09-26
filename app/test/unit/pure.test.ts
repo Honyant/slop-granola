@@ -44,7 +44,7 @@ describe('formatTranscript', () => {
   })
 
   it('names the far side when it is one known person', () => {
-    const t = formatTranscript([seg('system', 0, 'All right.'), seg('mic', 2000, 'Great.')], 0, 10_000, 'Ada Park')
+    const t = formatTranscript([seg('system', 0, 'All right.'), seg('mic', 2000, 'Great.')], 0, 10_000, { me: 'Me', them: 'Ada Park' })
     expect(t).toBe('[00:00] Ada Park: All right.\n[00:02] Me: Great.')
   })
 
@@ -97,10 +97,12 @@ describe('prompts', () => {
       },
       'Ada',
     )
-    expect(system!.content).toContain('"Me" in the transcript is Ada')
+    expect(system!.content).toContain('"Ada" is the user')
     expect(user!.content).toContain('### Updates')
     expect(user!.content).toContain('- pricing')
-    expect(user!.content).toContain('Me: We need pricing.')
+    // Labels are what the notes should say: models copy "Me"/"Them" into prose as if they were names.
+    expect(user!.content).toContain('Ada: We need pricing.')
+    expect(user!.content).not.toMatch(/\] (Me|Them): /)
   })
 
   it('grounds chat in the focused meeting and keeps history before the question', () => {

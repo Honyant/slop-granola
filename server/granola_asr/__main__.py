@@ -29,7 +29,7 @@ def main() -> None:
         token=settings.token,
         engine=engine,
         new_detector=SileroVad().detector,
-        llm_proxy=LlmProxy(settings.llm_upstream),
+        llm_proxy=LlmProxy(settings.llm_upstream, reasoning_effort=settings.llm_reasoning_effort),
         device=settings.device,
         max_sessions=settings.max_sessions,
     )

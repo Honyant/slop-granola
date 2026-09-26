@@ -1,6 +1,6 @@
 // Prompt construction. Pure functions: everything the model sees is built here
 // from explicit inputs, so prompts are unit-testable and easy to audit.
-import { counterparty, speakerLabel } from '@shared/speakers'
+import { counterparty } from '@shared/speakers'
 import type { Attendee, Template, TranscriptSegment } from '@shared/types'
 import type { LlmMessage } from './client'
 
@@ -18,7 +18,7 @@ const ENHANCE_TRANSCRIPT_BUDGET = 80_000
 const CHAT_CONTEXT_BUDGET = 60_000
 
 export function enhanceMessages(meeting: MeetingContext, template: Template, userName: string): LlmMessage[] {
-  const them = counterparty(meeting.attendees)
+  const labels = promptLabels(meeting.attendees, userName)
   const system = `You are Granola, an AI notepad for meetings. You turn a user's rough notes and the meeting transcript into excellent meeting notes.
 
 Rules:
@@ -26,7 +26,7 @@ Rules:
 - Structure: use "###" headings and "-" bullets (nested bullets allowed). Follow the template's sections, dropping ones with nothing to say.
 - The user's own notes show what they care about. Every point they wrote must appear, expanded with specifics from the transcript. Keep their wording where it is clear.
 - Be concise and concrete: names, numbers, dates, decisions, owners. No filler, no speculation, nothing that is not supported by the notes or transcript.
-- "Me" in the transcript is ${userName || 'the user'}; ${them ? `"${them}" is the other person on the call.` : `"Them" is everyone else on the call. Refer to people by name when the transcript makes it clear who said what.`}
+- Transcript lines are labelled by speaker: "${labels.me}" is the user; ${labels.them === OTHERS ? `"${OTHERS}" lines are everyone else on the call, so name people only when the transcript makes clear who is speaking.` : `"${labels.them}" is the other person on the call.`}
 - Write action items as "- [ ] Owner: task (due date if mentioned)" under the next-steps section.`
 
   const user = `${meetingHeader(meeting)}
@@ -38,7 +38,7 @@ ${template.body}
 ${meeting.myNotes.trim() || '(none)'}
 
 ## Transcript
-${formatTranscript(meeting.transcript, meeting.meetingAt, ENHANCE_TRANSCRIPT_BUDGET, them) || '(no transcript)'}`
+${formatTranscript(meeting.transcript, meeting.meetingAt, ENHANCE_TRANSCRIPT_BUDGET, labels) || '(no transcript)'}`
 
   return [
     { role: 'system', content: system },
@@ -54,7 +54,7 @@ export function titleMessages(meeting: MeetingContext): LlmMessage[] {
     },
     {
       role: 'user',
-      content: `${meeting.myNotes.slice(0, 2000)}\n\n${formatTranscript(meeting.transcript, meeting.meetingAt, 6000, counterparty(meeting.attendees))}`,
+      content: `${meeting.myNotes.slice(0, 2000)}\n\n${formatTranscript(meeting.transcript, meeting.meetingAt, 6000, promptLabels(meeting.attendees, ''))}`,
     },
   ]
 }
@@ -75,7 +75,7 @@ export function chatMessages(context: ChatContext, history: LlmMessage[], questi
     month: 'long',
     day: 'numeric',
   })
-  const system = `You are Granola's assistant. You answer questions about the user's meetings using only the meeting notes and transcripts provided below. Today is ${today}. The user is ${context.userName || 'the user'} ("Me" in transcripts).
+  const system = `You are Granola's assistant. You answer questions about the user's meetings using only the meeting notes and transcripts provided below. Today is ${today}. The user is ${context.userName || 'the user'} (labelled "${context.userName || 'Me'}" in transcripts).
 
 - Answer directly and concisely in Markdown. Use bullets for lists.
 - Cite which meeting a fact comes from when several meetings are provided.
@@ -84,13 +84,13 @@ export function chatMessages(context: ChatContext, history: LlmMessage[], questi
   let budget = CHAT_CONTEXT_BUDGET
   const sections: string[] = []
   if (context.focus) {
-    const text = meetingDocument(context.focus, budget)
+    const text = meetingDocument(context.focus, budget, promptLabels(context.focus.attendees, context.userName))
     sections.push(`# Current meeting\n${text}`)
     budget -= text.length
   }
   for (const meeting of context.related) {
     if (budget < 2000) break
-    const text = meetingDocument(meeting, Math.min(budget, 12_000))
+    const text = meetingDocument(meeting, Math.min(budget, 12_000), promptLabels(meeting.attendees, context.userName))
     sections.push(`# Meeting\n${text}`)
     budget -= text.length
   }
@@ -105,12 +105,12 @@ export function chatMessages(context: ChatContext, history: LlmMessage[], questi
   ]
 }
 
-function meetingDocument(meeting: MeetingContext, budget: number): string {
+function meetingDocument(meeting: MeetingContext, budget: number, labels: SpeakerLabels): string {
   const notes = meeting.enhanced?.trim() || meeting.myNotes.trim()
   const head = `${meetingHeader(meeting)}\n\n## Notes\n${notes || '(none)'}`
   const remaining = budget - head.length - 20
   if (remaining < 500) return head.slice(0, budget)
-  const transcript = formatTranscript(meeting.transcript, meeting.meetingAt, remaining, counterparty(meeting.attendees))
+  const transcript = formatTranscript(meeting.transcript, meeting.meetingAt, remaining, labels)
   return transcript ? `${head}\n\n## Transcript\n${transcript}` : head
 }
 
@@ -127,6 +127,23 @@ function meetingHeader(meeting: MeetingContext): string {
   return `Title: ${meeting.title || 'Untitled meeting'}\nDate: ${when}${people ? `\nAttendees: ${people}` : ''}`
 }
 
+export interface SpeakerLabels {
+  me: string
+  them: string
+}
+
+const OTHERS = 'Other participant'
+
+/**
+ * Transcript labels for a model: the user's name and the other person's, or
+ * "Other participant". Models copy labels into their prose, and "Me"/"Them"
+ * read as names ("Them will send pricing"), so the labels are what the notes
+ * should say.
+ */
+export function promptLabels(attendees: Attendee[], userName: string): SpeakerLabels {
+  return { me: userName.trim() || 'Me', them: counterparty(attendees) ?? OTHERS }
+}
+
 /**
  * "[mm:ss] Speaker: text" lines, merging consecutive segments from the same
  * speaker. Over budget, the middle is elided: openings and conclusions carry
@@ -136,8 +153,7 @@ export function formatTranscript(
   segments: TranscriptSegment[],
   originMs: number,
   budget: number,
-  /** Name for the far side when it is one known person. */
-  them: string | null = null,
+  labels: SpeakerLabels = { me: 'Me', them: 'Them' },
 ): string {
   const lines: string[] = []
   let current: {
@@ -151,10 +167,10 @@ export function formatTranscript(
       current.text += ` ${s.text}`
       continue
     }
-    if (current) lines.push(line(current, origin, them))
+    if (current) lines.push(line(current, origin, labels))
     current = { source: s.source, start: s.startMs, text: s.text }
   }
-  if (current) lines.push(line(current, origin, them))
+  if (current) lines.push(line(current, origin, labels))
 
   const full = lines.join('\n')
   if (full.length <= budget) return full
@@ -162,10 +178,10 @@ export function formatTranscript(
   return `${full.slice(0, half)}\n[… transcript truncated …]\n${full.slice(full.length - half)}`
 }
 
-function line(turn: { source: TranscriptSegment['source']; start: number; text: string }, origin: number, them: string | null): string {
+function line(turn: { source: TranscriptSegment['source']; start: number; text: string }, origin: number, labels: SpeakerLabels): string {
   const seconds = Math.max(0, Math.round((turn.start - origin) / 1000))
   const stamp = `${Math.floor(seconds / 60)
     .toString()
     .padStart(2, '0')}:${(seconds % 60).toString().padStart(2, '0')}`
-  return `[${stamp}] ${speakerLabel(turn.source, them)}: ${turn.text}`
+  return `[${stamp}] ${turn.source === 'mic' ? labels.me : labels.them}: ${turn.text}`
 }

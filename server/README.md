@@ -8,7 +8,8 @@ Apple Silicon Mac with `scripts/run-local.sh`.
 - Interim text comes from **NVIDIA Parakeet-TDT-0.6B-v3**, re-decoded every 480 ms of speech.
 - Final text comes from **IBM Granite Speech 4.1 2B**.
 - Silero VAD segments the stream on the server.
-- The same port proxies the host's Ollama through an OpenAI-compatible API.
+- The same port proxies an LLM on the host through an OpenAI-compatible API: Qwen3.8-27B on
+  vLLM by default, or gpt-oss on Ollama.
 
 ## Quick start
 
@@ -121,6 +122,24 @@ Why these two:
 
 The service uses 6.5 GB of VRAM (per `nvidia-smi`). With `gpt-oss:latest` loaded in Ollama the
 whole GPU sits at 20.5 GB of 32 GB, and Ollama stays 100% on the GPU.
+
+**LLM: Qwen3.8-27B on vLLM (default).** `deploy.sh` runs a second container, `granola-llm`
+(`vllm/vllm-openai:v0.29.0`), serving `gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090` as
+`qwen3.8-27b` on loopback port 8001; clients reach it only through the authenticated `/v1`
+pass-through. That checkpoint is a 4-bit build sized for a 32 GB card next to the ASR
+models: 17.9 GB, native FP4 on Blackwell, with the output layer quantized too (NVIDIA's own
+NVFP4 build is 21.9 GB and would leave about 3 GB free). vLLM is capped at 0.72 of the card:
+16.2 GB weights and an 83k-token FP8 KV cache, with requests up to 64k tokens. The whole GPU
+sits at 28.6 of 32.6 GB with both services loaded. Decoding runs at about 78 tokens/s.
+
+Qwen3.8 reasons before answering, with depth set by `reasoning_effort` (`xhigh`, `medium`,
+`low`). It is a Qwen chat-template argument, not an OpenAI field, so the pass-through adds
+`GRANOLA_LLM_REASONING_EFFORT` (default `xhigh`) to requests that set none, and clients stay
+provider-neutral. vLLM's `qwen3` reasoning parser returns the reasoning separately from the
+answer, so notes never contain it. On the real-pipeline test, notes and a title are ready
+about 25 s after a meeting ends.
+
+`GRANOLA_LLM_BACKEND=ollama ./deploy.sh` switches back to gpt-oss on Ollama, described below.
 
 **LLM context.** Ollama loads gpt-oss with an 8k context, and its OpenAI-compatible API can't
 raise `num_ctx` per request, so a long meeting's transcript would be silently truncated.

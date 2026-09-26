@@ -68,10 +68,11 @@ test('records a meeting: live two-channel transcript, echo suppression, enhanced
 
   const enhanceRequest = llm.requests.find((r) => r.messages[0]!.content.includes('turn a user'))!
   const prompt = enhanceRequest.messages[1]!.content
-  expect(prompt).toContain('Me: Infrastructure work.')
-  expect(prompt).toContain('Them: Hello everyone.')
-  // The suppressed echo never reaches the model as something "Me" said.
-  expect(prompt).not.toMatch(/Me: [^\n]*Airbus/)
+  // Lines are labelled with what the notes should say: the user's name, and "Other participant".
+  expect(prompt).toContain('Ada Lovelace: Infrastructure work.')
+  expect(prompt).toContain('Other participant: Hello everyone.')
+  // The suppressed echo never reaches the model as something the user said.
+  expect(prompt).not.toMatch(/Ada Lovelace: [^\n]*Airbus/)
 
   await page.getByRole('tab', { name: 'My notes' }).click()
   // The placeholder is drawn with ::before, so assert on the attribute that feeds it.

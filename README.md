@@ -43,6 +43,7 @@ Transcription and notes are configured separately in **Settings → Connectors**
 
 | Notes and chat | Needs | Notes |
 |---|---|---|
+| Your GPU server | NVIDIA GPU, Docker | Qwen3.8-27B (NVFP4) on vLLM with `xhigh` reasoning, set up by `server/deploy.sh`. |
 | Ollama on this Mac | [Ollama](https://ollama.com) | `ollama pull gpt-oss:20b` (about 16 GB of memory). |
 | OpenAI, Gemini API, OpenRouter | API key | Presets in Settings; any OpenAI-compatible endpoint works. |
 | Anthropic | API key | Claude Opus 5 by default. |

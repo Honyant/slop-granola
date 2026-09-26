@@ -14,6 +14,7 @@ class Settings:
     interim_model: str
     final_model: str
     llm_upstream: str
+    llm_reasoning_effort: str | None
     max_sessions: int
     device: str
 
@@ -29,6 +30,7 @@ class Settings:
             interim_model=os.environ.get("GRANOLA_ASR_INTERIM_MODEL", "nvidia/parakeet-tdt-0.6b-v3"),
             final_model=os.environ.get("GRANOLA_ASR_FINAL_MODEL", "ibm-granite/granite-speech-4.1-2b"),
             llm_upstream=os.environ.get("GRANOLA_LLM_UPSTREAM", "http://127.0.0.1:11434/v1").rstrip("/"),
+            llm_reasoning_effort=os.environ.get("GRANOLA_LLM_REASONING_EFFORT") or None,
             max_sessions=int(os.environ.get("GRANOLA_ASR_MAX_SESSIONS", "8")),
             device=os.environ.get("GRANOLA_ASR_DEVICE", "cuda:0"),
         )

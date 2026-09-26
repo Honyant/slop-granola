@@ -47,10 +47,15 @@ def fake_llm_upstream() -> Starlette:
 
 
 def make_client(
-    final: FakeRecognizer | None = None, interim: FakeRecognizer | None = None, max_sessions: int = 4
+    final: FakeRecognizer | None = None,
+    interim: FakeRecognizer | None = None,
+    max_sessions: int = 4,
+    reasoning_effort: str | None = None,
 ) -> TestClient:
     engine = InferenceEngine(interim or FakeRecognizer("interim"), final or FakeRecognizer("final"))
-    proxy = LlmProxy("http://upstream/v1", transport=httpx.ASGITransport(app=fake_llm_upstream()))
+    proxy = LlmProxy(
+        "http://upstream/v1", reasoning_effort=reasoning_effort, transport=httpx.ASGITransport(app=fake_llm_upstream())
+    )
     app = create_app(
         token=TOKEN,
         engine=engine,
@@ -355,6 +360,16 @@ def test_chat_completion_pass_through(client: TestClient) -> None:
     body = {"model": "gpt-oss:20b", "messages": [{"role": "user", "content": "hi"}]}
     resp = client.post("/v1/chat/completions", json=body, headers=AUTH)
     assert resp.status_code == 200 and resp.json()["echo"] == body
+
+
+def test_chat_completion_gets_the_configured_reasoning_effort() -> None:
+    with make_client(reasoning_effort="xhigh") as client:
+        body = {"model": "qwen3.8-27b", "messages": [{"role": "user", "content": "hi"}]}
+        echo = client.post("/v1/chat/completions", json=body, headers=AUTH).json()["echo"]
+        assert echo == {**body, "chat_template_kwargs": {"reasoning_effort": "xhigh"}}
+        # A request that chose its own effort keeps it.
+        chosen = {**body, "chat_template_kwargs": {"reasoning_effort": "low", "enable_thinking": True}}
+        assert client.post("/v1/chat/completions", json=chosen, headers=AUTH).json()["echo"] == chosen
 
 
 def test_chat_completion_streaming_pass_through(client: TestClient) -> None:
