@@ -11,6 +11,7 @@ import { ChatView } from '@/views/ChatView'
 import { HomeView } from '@/views/home/HomeView'
 import { NoteView } from '@/views/note/NoteView'
 import { AttendeeNotesView, CompaniesView, PeopleView } from '@/views/PeopleView'
+import { TrashView } from '@/views/TrashView'
 import { RecipesView } from '@/views/RecipesView'
 import { SettingsView } from '@/views/settings/SettingsView'
 import { SharedView } from '@/views/SharedView'
@@ -90,6 +91,8 @@ function View({ route }: { route: Route }) {
       return <AttendeeNotesView key={route.domain} domain={route.domain} />
     case 'recipes':
       return <RecipesView />
+    case 'trash':
+      return <TrashView />
     case 'settings':
       return <SettingsView section={route.section} />
   }

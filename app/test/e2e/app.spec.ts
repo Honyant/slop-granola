@@ -148,6 +148,16 @@ test('organizes notes: folders, spaces, multi-select trash', async () => {
   await bar.getByRole('button', { name: 'More' }).click()
   await page.getByRole('menuitem', { name: 'Move to trash' }).click()
   await expect(page.getByText('Your notes will show up here.')).toBeVisible()
+
+  // Trash lists them; restoring brings a note back, deleting forever removes it.
+  await page.getByRole('button', { name: 'Trash' }).click()
+  await expect(page.getByText('deleted in 30 days').first()).toBeVisible()
+  await page.getByRole('listitem').filter({ hasText: 'Alpha sync' }).getByRole('button', { name: 'Restore' }).click()
+  await page.getByRole('button', { name: 'Delete Beta planning forever' }).click()
+  await expect(page.getByText('The trash is empty')).toBeVisible()
+  await page.getByRole('button', { name: 'Home', exact: true }).click()
+  await expect(page.getByText('Alpha sync')).toBeVisible()
+  await expect(page.getByText('Beta planning')).toHaveCount(0)
 })
 
 test('search finds notes by transcript text', async () => {

@@ -27,6 +27,7 @@ export type Route =
   | { name: 'companies' }
   | { name: 'company'; domain: string }
   | { name: 'recipes' }
+  | { name: 'trash' }
   | { name: 'settings'; section: SettingsSection }
 
 export const DEEP_LINK_SCHEME = 'granola-clone'

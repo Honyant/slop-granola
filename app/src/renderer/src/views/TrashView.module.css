@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hint {
+  margin: 4px 0 20px;
+  color: var(--ink-tertiary);
+  font-size: var(--text-sm);
+}
+
+.empty {
+  margin-top: 80px;
+  text-align: center;
+  color: var(--ink-tertiary);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 0.5px solid var(--border-hairline);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink-primary);
+}
+
+.meta {
+  color: var(--ink-tertiary);
+  font-size: var(--text-sm);
+}

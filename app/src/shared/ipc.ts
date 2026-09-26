@@ -56,15 +56,19 @@ export interface Api {
     create(input: { event?: CalendarEvent; folderId?: string }): Note
     update(id: string, patch: NotePatch): void
     trash(ids: string[]): void
+    listTrash(): (NoteSummary & { trashedAt: number })[]
+    restore(ids: string[]): void
+    /** Permanent; only affects notes already in the trash. */
+    deleteForever(ids: string[]): void
     setFolder(noteIds: string[], folderId: string, member: boolean): void
     transcript(id: string): TranscriptSegment[]
     enhance(id: string): void
+    /** A generation in progress (or the last one's failure), so a reopened note can resume showing it. */
+    enhanceState(id: string): Events['enhance:progress'] | null
     copyLink(id: string): string
     search(query: string): SearchHit[]
     stats(): UsageStats
     /** Asks for a Granola transcript export (.txt) and imports its meetings; null if cancelled. */
-    /** A generation in progress (or the last one's failure), so a reopened note can resume showing it. */
-    enhanceState(id: string): Events['enhance:progress'] | null
     importGranola(): { imported: number; skipped: number } | null
   }
   folders: {

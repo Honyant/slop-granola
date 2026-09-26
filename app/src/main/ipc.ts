@@ -111,6 +111,16 @@ export function registerIpc(services: Services): void {
         ctx.emit('notes:changed', { ids })
         ctx.emit('folders:changed', null)
       },
+      listTrash: () => ctx.notes.listTrashed(),
+      restore: (ids) => {
+        ctx.notes.restore(ids)
+        ctx.emit('notes:changed', { ids })
+        ctx.emit('folders:changed', null)
+      },
+      deleteForever: (ids) => {
+        ctx.notes.deleteForever(ids)
+        ctx.emit('notes:changed', { ids })
+      },
       setFolder: (noteIds, folderId, member) => {
         ctx.notes.setFolder(noteIds, folderId, member)
         ctx.emit('notes:changed', { ids: noteIds })
@@ -118,6 +128,7 @@ export function registerIpc(services: Services): void {
       },
       transcript: (id) => ctx.transcripts.list(id),
       enhance: (id) => void enhancer.run(id),
+      enhanceState: (id) => enhancer.state(id),
       copyLink: (id) => {
         const link = noteLink(id)
         clipboard.writeText(link)
@@ -128,7 +139,6 @@ export function registerIpc(services: Services): void {
     },
     folders: {
       list: () => ctx.folders.list(),
-      enhanceState: (id) => enhancer.state(id),
       create: (name) => {
         const folder = ctx.folders.create(name)
         ctx.emit('folders:changed', null)

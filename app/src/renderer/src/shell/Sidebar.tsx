@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Building2, ChevronsUpDown, House, Lock, MessageCircle, Search, SquareSlash, User, Users } from 'lucide-react'
+import { Building2, ChevronsUpDown, House, Lock, MessageCircle, Search, SquareSlash, Trash2, User, Users } from 'lucide-react'
 import type { Route } from '@shared/routes'
 import { Avatar } from '@/components/Avatar'
 import { IconButton } from '@/components/controls'
@@ -81,6 +81,9 @@ export function Sidebar() {
         </IconButton>
         <IconButton label="Companies" active={route.name === 'companies'} onClick={() => navigate({ name: 'companies' })}>
           <Building2 {...ICON} />
+        </IconButton>
+        <IconButton label="Trash" active={route.name === 'trash'} onClick={() => navigate({ name: 'trash' })}>
+          <Trash2 {...ICON} />
         </IconButton>
       </div>
 

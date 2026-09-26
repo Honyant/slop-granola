@@ -144,6 +144,28 @@ export class NotesRepo {
     })
   }
 
+  /** Trashed notes, most recently trashed first, with when each was trashed. */
+  listTrashed(): (NoteSummary & { trashedAt: number })[] {
+    const rows = this.db.all<NoteRow>(`SELECT ${SUMMARY_COLUMNS} FROM notes n WHERE n.trashed_at IS NOT NULL ORDER BY n.trashed_at DESC`)
+    return this.hydrate(rows).map((note, i) => ({ ...note, trashedAt: rows[i]!.trashed_at! }))
+  }
+
+  restore(ids: string[]): void {
+    this.db.transaction(() => {
+      for (const id of ids) {
+        this.db.run('UPDATE notes SET trashed_at = NULL WHERE id = ?', [id])
+        this.reindex(id)
+      }
+    })
+  }
+
+  /** Deletes trashed notes now; notes not in the trash are left alone. */
+  deleteForever(ids: string[]): void {
+    this.db.transaction(() => {
+      for (const id of ids) this.db.run('DELETE FROM notes WHERE id = ? AND trashed_at IS NOT NULL', [id])
+    })
+  }
+
   /** Permanently deletes notes trashed before `cutoff`. */
   purgeTrash(cutoff: number): number {
     return this.db.run('DELETE FROM notes WHERE trashed_at IS NOT NULL AND trashed_at < ?', [cutoff]).changes

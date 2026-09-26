@@ -27,6 +27,7 @@ export const keys = {
   events: (from: string, to: string) => ['events', from, to] as const,
   thread: (id: string) => ['thread', id] as const,
   threads: ['threads'] as const,
+  trash: ['trash'] as const,
   devices: ['devices'] as const,
   permissions: ['permissions'] as const,
 }
@@ -36,6 +37,7 @@ export function useLiveInvalidation(): void {
   useEvent('notes:changed', ({ ids }) => {
     void queryClient.invalidateQueries({ queryKey: keys.notes })
     void queryClient.invalidateQueries({ queryKey: ['folderNotes'] })
+    void queryClient.invalidateQueries({ queryKey: keys.trash })
     void queryClient.invalidateQueries({ queryKey: keys.people })
     void queryClient.invalidateQueries({ queryKey: keys.companies })
     if (ids === 'all') {
@@ -62,6 +64,7 @@ export function useLiveInvalidation(): void {
   })
 }
 
+export const useTrash = () => useQuery({ queryKey: keys.trash, queryFn: () => api.notes.listTrash() })
 export const useNotes = () => useQuery({ queryKey: keys.notes, queryFn: () => api.notes.list() })
 export const useNote = (id: string) => useQuery({ queryKey: keys.note(id), queryFn: () => api.notes.get(id) })
 export const useFolderNotes = (id: string) => useQuery({ queryKey: keys.folderNotes(id), queryFn: () => api.notes.listInFolder(id) })
