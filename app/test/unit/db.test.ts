@@ -84,6 +84,20 @@ describe('database', () => {
     expect(settings.get().transcription.deepgramApiKey).toBe('dg-key')
   })
 
+  it('never erases a credential it cannot decrypt, and undefined fields leave settings alone', () => {
+    // The Keychain refuses this box (a new code signature, access denied): every open yields ''.
+    const locked = { seal: (v: string) => (v ? `enc:v1:${v}` : v), open: () => '' }
+    const settings = new SettingsRepo(db, locked)
+    settings.update({ transcription: { url: 'ws://h/v1/listen', token: 'tok' }, llm: { apiKey: 'key' } })
+    settings.update({ profile: { name: 'Ada' }, transcription: { url: undefined, token: undefined } })
+    const stored = () => JSON.parse(db.get<{ value: string }>('SELECT value FROM settings')!.value)
+    expect(stored().transcription).toMatchObject({ url: 'ws://h/v1/listen', token: 'enc:v1:tok' })
+    expect(stored().llm.apiKey).toBe('enc:v1:key')
+    // Setting it explicitly still replaces it.
+    settings.update({ llm: { apiKey: 'new' } })
+    expect(stored().llm.apiKey).toBe('enc:v1:new')
+  })
+
   it('settings survive a corrupt row and merge nested patches', () => {
     const settings = new SettingsRepo(db)
     expect(settings.get().calendar.showInMenuBar).toBe(true)

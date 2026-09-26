@@ -1,9 +1,7 @@
 // Credentials at rest. Electron's safeStorage encrypts with a key held in the
 // macOS Keychain, so a copied or backed-up database does not leak API keys.
 import { safeStorage } from 'electron'
-import type { SecretBox } from './db/repos'
-
-const PREFIX = 'enc:v1:'
+import { SEALED_PREFIX as PREFIX, type SecretBox } from './db/repos'
 
 export function keychainBox(log: (message: string) => void): SecretBox {
   const available = safeStorage.isEncryptionAvailable()

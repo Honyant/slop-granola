@@ -24,6 +24,7 @@ import { registerFontScheme, serveGranolaFonts } from './fonts'
 
 const TRASH_RETENTION_MS = 30 * 24 * 3600 * 1000
 const QUIT_FLUSH_TIMEOUT_MS = 8000
+const KEYCHAIN_APP_NAME = 'Granola Clone'
 /** Matches the prompt card's slide-out animation (Prompt.module.css). */
 const PROMPT_EXIT_MS = 300
 
@@ -31,7 +32,10 @@ const PROMPT_EXIT_MS = 300
 // alone would make Electron use ~/Library/Application Support/Granola, which
 // belongs to the real Granola app. Tests point at a throwaway profile instead.
 app.setPath('userData', process.env.GRANOLA_USER_DATA ?? join(app.getPath('appData'), 'Granola Clone'))
-app.setName('Granola')
+// Electron names its Keychain item after the app ("<name> Safe Storage"). Under "Granola" it
+// would share the real Granola's item, which macOS guards by code signature, so the clone
+// starts as "Granola Clone", opens its own item, and only then takes the display name.
+app.setName(KEYCHAIN_APP_NAME)
 registerFontScheme()
 
 if (!app.requestSingleInstanceLock()) {
@@ -66,8 +70,10 @@ async function main(): Promise<void> {
   }
   const db = new Db(join(app.getPath('userData'), 'granola.db'))
   const log = (message: string) => console.log(`[granola] ${message}`)
+  const secrets = keychainBox(log) // binds the Keychain item to KEYCHAIN_APP_NAME
+  app.setName('Granola')
   serveGranolaFonts(log)
-  const ctx = new AppContext(db, emit, log, keychainBox(log))
+  const ctx = new AppContext(db, emit, log, secrets)
   seedSettings(ctx)
   ctx.notes.purgeTrash(Date.now() - TRASH_RETENTION_MS)
   ctx.chats.failInterrupted()
@@ -265,17 +271,20 @@ function seedSettings(ctx: AppContext): void {
   const s = ctx.settings.get()
   const env = process.env
   const name = s.profile.name || accountFullName()
+  // Only empty fields with a value to fill are written: seeding must never overwrite a stored
+  // setting, least of all a credential that merely failed to decrypt.
+  const fill = (current: string, ...candidates: (string | undefined)[]) => (current ? undefined : candidates.find((c) => c) || undefined)
   ctx.settings.update({
     profile: { name },
     workspace: { name: s.workspace.name || `${name.split(' ')[0]} HQ` },
     transcription: {
-      url: s.transcription.url || env.GRANOLA_ASR_URL || '',
-      token: s.transcription.token || env.GRANOLA_ASR_TOKEN || '',
+      url: fill(s.transcription.url, env.GRANOLA_ASR_URL),
+      token: fill(s.transcription.token, env.GRANOLA_ASR_TOKEN),
     },
     llm: {
-      baseUrl: s.llm.baseUrl || env.GRANOLA_LLM_BASE_URL || '',
-      model: s.llm.model || env.GRANOLA_LLM_MODEL || '',
-      apiKey: s.llm.apiKey || env.GRANOLA_LLM_API_KEY || env.GRANOLA_ASR_TOKEN || '',
+      baseUrl: fill(s.llm.baseUrl, env.GRANOLA_LLM_BASE_URL),
+      model: fill(s.llm.model, env.GRANOLA_LLM_MODEL),
+      apiKey: fill(s.llm.apiKey, env.GRANOLA_LLM_API_KEY, env.GRANOLA_ASR_TOKEN),
     },
   })
 }

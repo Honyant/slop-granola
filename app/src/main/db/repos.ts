@@ -218,6 +218,9 @@ export class CatalogRepo {
   }
 }
 
+/** Marks a sealed credential; anything else is plaintext written before encryption existed. */
+export const SEALED_PREFIX = 'enc:v1:'
+
 /** Encrypts credential fields at rest. The default leaves them as they are (tests, no Keychain). */
 export interface SecretBox {
   seal(plain: string): string
@@ -233,22 +236,36 @@ export class SettingsRepo {
   ) {}
 
   get(): Settings {
-    const row = this.db.get<{ value: string }>('SELECT value FROM settings WHERE id = 1')
-    let raw: unknown = {}
-    try {
-      raw = row ? JSON.parse(row.value) : {}
-    } catch {
-      // Unparseable row: fall through to defaults.
-    }
-    return parseSettings(mapSecrets(raw, (v) => this.secrets.open(v)))
+    return parseSettings(mapSecrets(this.stored(), (v) => this.secrets.open(v)))
   }
 
   update(patch: SettingsPatch): Settings {
+    const stored = this.stored() as Record<string, Record<string, unknown> | undefined>
     const next = mergeSettings(this.get(), patch)
+    const sealed = mapSecrets(next, (v) => this.secrets.seal(v)) as unknown as Record<string, Record<string, unknown>>
+    // A credential the patch leaves alone keeps its stored ciphertext byte for byte. Re-sealing
+    // what get() decrypted would turn a failed decryption (Keychain access denied, a new code
+    // signature) into an erased secret. Plaintext from before encryption is still sealed here.
+    const touched = patch as Record<string, Record<string, unknown> | undefined>
+    for (const [section, field] of SECRET_FIELDS) {
+      const before = stored[section]?.[field]
+      if (touched[section]?.[field] === undefined && typeof before === 'string' && before.startsWith(SEALED_PREFIX)) {
+        sealed[section]![field] = before
+      }
+    }
     this.db.run('INSERT INTO settings (id, value) VALUES (1, ?) ON CONFLICT (id) DO UPDATE SET value = excluded.value', [
-      JSON.stringify(mapSecrets(next, (v) => this.secrets.seal(v))),
+      JSON.stringify(sealed),
     ])
     return next
+  }
+
+  private stored(): unknown {
+    const row = this.db.get<{ value: string }>('SELECT value FROM settings WHERE id = 1')
+    try {
+      return row ? JSON.parse(row.value) : {}
+    } catch {
+      return {} // unparseable row: fall through to defaults
+    }
   }
 }
 

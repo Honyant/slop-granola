@@ -7,11 +7,13 @@ export type SettingsPatch = { [K in keyof Settings]?: Partial<Settings[K]> | Set
 
 export function applyPatch(current: Settings, patch: SettingsPatch): Settings {
   const next: Record<string, unknown> = { ...current }
-  for (const [key, value] of Object.entries(patch)) {
+  // An undefined field means "leave as is", never "reset to the default".
+  const defined = (entries: object) => Object.entries(entries).filter(([, v]) => v !== undefined)
+  for (const [key, value] of defined(patch)) {
     const base = (current as Record<string, unknown>)[key]
     next[key] =
       value !== null && typeof value === 'object' && !Array.isArray(value) && typeof base === 'object'
-        ? { ...(base as object), ...value }
+        ? { ...(base as object), ...Object.fromEntries(defined(value as object)) }
         : value
   }
   return next as Settings
