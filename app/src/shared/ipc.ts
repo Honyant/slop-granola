@@ -63,6 +63,8 @@ export interface Api {
     search(query: string): SearchHit[]
     stats(): UsageStats
     /** Asks for a Granola transcript export (.txt) and imports its meetings; null if cancelled. */
+    /** A generation in progress (or the last one's failure), so a reopened note can resume showing it. */
+    enhanceState(id: string): Events['enhance:progress'] | null
     importGranola(): { imported: number; skipped: number } | null
   }
   folders: {

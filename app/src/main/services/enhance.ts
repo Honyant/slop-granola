@@ -1,4 +1,5 @@
 // Generates AI-enhanced notes (and a title for untitled notes) after a meeting.
+import type { Events } from '@shared/ipc'
 import type { AppContext } from '../context'
 import { complete, llmConfig, streamChat, type LlmConfig } from '../llm/client'
 import { enhanceMessages, titleMessages } from '../llm/prompts'
@@ -7,8 +8,17 @@ import { meetingContext } from './meeting'
 /** Progress events are throttled; the renderer re-renders markdown on each. */
 const PROGRESS_INTERVAL_MS = 80
 
+export type EnhanceProgress = Events['enhance:progress']
+
+/**
+ * Runs in the main process, so leaving the note (or closing its window) never
+ * interrupts a generation. The latest progress of each run is kept so a note
+ * opened mid-generation can pick up the stream where it is, and a failure that
+ * happened while nobody was looking is still shown.
+ */
 export class Enhancer {
   private readonly running = new Map<string, AbortController>()
+  private readonly latest = new Map<string, EnhanceProgress>()
 
   constructor(
     private readonly ctx: AppContext,
@@ -18,6 +28,17 @@ export class Enhancer {
 
   isRunning(noteId: string): boolean {
     return this.running.has(noteId)
+  }
+
+  /** The in-flight or failed run for a note; null once it has succeeded (the note holds the result). */
+  state(noteId: string): EnhanceProgress | null {
+    return this.latest.get(noteId) ?? null
+  }
+
+  private report(progress: EnhanceProgress): void {
+    if (progress.status === 'done') this.latest.delete(progress.noteId)
+    else this.latest.set(progress.noteId, progress)
+    this.ctx.emit('enhance:progress', progress)
   }
 
   /** Starts (or restarts) enhancement for a note. Resolves when finished; never rejects. */
@@ -51,13 +72,13 @@ export class Enhancer {
     let lastEmit = 0
     // Show progress immediately: the first token can be many seconds away (model load,
     // and reasoning models think before they write).
-    ctx.emit('enhance:progress', { noteId, markdown, status: 'streaming' })
+    this.report({ noteId, markdown, status: 'streaming' })
     try {
       for await (const delta of streamChat(llm, enhanceMessages(meeting, template, settings.profile.name), controller.signal)) {
         markdown += delta
         if (Date.now() - lastEmit >= PROGRESS_INTERVAL_MS) {
           lastEmit = Date.now()
-          ctx.emit('enhance:progress', { noteId, markdown, status: 'streaming' })
+          this.report({ noteId, markdown, status: 'streaming' })
         }
       }
       markdown = cleanMarkdown(markdown)
@@ -67,14 +88,14 @@ export class Enhancer {
         view: 'enhanced',
         ...(generatedTitle && !ctx.notes.get(noteId)?.title.trim() ? { title: generatedTitle } : {}),
       })
-      ctx.emit('enhance:progress', { noteId, markdown, status: 'done' })
+      this.report({ noteId, markdown, status: 'done' })
       ctx.emit('notes:changed', { ids: [noteId] })
       this.onReady(noteId, ctx.notes.get(noteId)?.title || 'Your meeting')
     } catch (error) {
       if (controller.signal.aborted) return
       const message = (error as Error).message
       ctx.log(`enhance ${noteId}: ${message}`)
-      ctx.emit('enhance:progress', { noteId, markdown, status: 'error', error: message })
+      this.report({ noteId, markdown, status: 'error', error: message })
     } finally {
       if (this.running.get(noteId) === controller) this.running.delete(noteId)
     }

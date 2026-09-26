@@ -128,6 +128,7 @@ export function registerIpc(services: Services): void {
     },
     folders: {
       list: () => ctx.folders.list(),
+      enhanceState: (id) => enhancer.state(id),
       create: (name) => {
         const folder = ctx.folders.create(name)
         ctx.emit('folders:changed', null)

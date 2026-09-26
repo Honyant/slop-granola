@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Calendar, Ellipsis, FolderPlus, Sparkles, Users } from 'lucide-react'
 import { docToMarkdown, EMPTY_DOC, markdownToEditorHtml } from '@shared/doc'
 import { dayHeading } from '@shared/time'
 import { counterparty } from '@shared/speakers'
-import type { NotePatch } from '@shared/ipc'
+import type { Events, NotePatch } from '@shared/ipc'
 import type { DocJSON, Note } from '@shared/types'
 import { Avatar } from '@/components/Avatar'
 import { IconButton } from '@/components/controls'
@@ -52,8 +52,7 @@ function NotePage({ note }: { note: Note }) {
   // The transcript tab is a way of looking at the note, not a saved preference.
   const [view, setView] = useState<Note['view'] | 'transcript'>(note.view)
 
-  useEvent('enhance:progress', (progress) => {
-    if (progress.noteId !== note.id) return
+  const applyProgress = useCallback((progress: Events['enhance:progress']) => {
     if (progress.status === 'streaming') {
       setEnhance({ markdown: progress.markdown })
       setView('enhanced')
@@ -67,7 +66,20 @@ function NotePage({ note }: { note: Note }) {
       })
       setView('enhanced')
     }
+  }, [])
+  // Generation continues in the main process while the note is closed; pick it up on reopen.
+  // A live event may arrive before that answer does, and it is newer.
+  const receivedLive = useRef(false)
+  useEvent('enhance:progress', (progress) => {
+    if (progress.noteId !== note.id) return
+    receivedLive.current = true
+    applyProgress(progress)
   })
+  useEffect(() => {
+    void api.notes.enhanceState(note.id).then((progress) => {
+      if (progress && !receivedLive.current) applyProgress(progress)
+    })
+  }, [note.id, applyProgress])
 
   const save = useDebouncedPatch<NotePatch>((patch) => void api.notes.update(note.id, patch), SAVE_DELAY_MS)
   const enhancing = enhance !== null && !enhance.error && !enhance.done

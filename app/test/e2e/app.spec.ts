@@ -318,7 +318,8 @@ test('meeting detection: a mic-using app prompts, and Take notes records into th
   const prompt =
     app.app.windows().find((w) => w.url().includes('prompt')) ??
     (await app.app.waitForEvent('window', { predicate: (w) => w.url().includes('prompt'), timeout: 15_000 }))
-  await expect(prompt.getByText('Meeting detected')).toBeVisible()
+  // The join prompt for the event can come first; detection follows once the watcher reports the call.
+  await expect(prompt.getByText('Meeting detected')).toBeVisible({ timeout: 20_000 })
   await expect(prompt.getByText('Vendor call · zoom.us')).toBeVisible()
   await prompt.getByRole('button', { name: 'Take notes' }).click()
 
@@ -350,4 +351,40 @@ test('an unanswered prompt fills its countdown bar over 15 s, then slides away',
       BrowserWindow.getAllWindows().some((w) => w.webContents.getURL().includes('prompt') && w.isVisible()),
     )
   await expect.poll(promptVisible, { timeout: 16_000, intervals: [500] }).toBe(false)
+})
+
+test('summary generation keeps going after leaving the note, and the note picks it up again', async () => {
+  asr = await startFakeAsr((i) => (i === 0 ? ['Can you send the pricing by Friday?'] : ['We work with Airbus and Ferrari.']))
+  // Thinks for 8 s before writing, as Qwen3.8 does at xhigh: no answer text, so no progress events.
+  llm = await startFakeLlm({ thinkMs: 8000 })
+  app = await launch({
+    settings: {
+      transcription: { url: asr.url, token: '', language: 'en' },
+      llm: { baseUrl: llm.baseUrl, model: 'fake', apiKey: '' },
+    },
+    helperFixture: { capture: { mic: join(FIXTURES, 'me.wav'), system: join(FIXTURES, 'them.wav') } },
+  })
+  const { page } = app
+  await page.getByRole('button', { name: 'New note' }).click()
+  await page.getByRole('button', { name: 'Show transcript' }).click()
+  await expect(page.getByText('We work with Airbus and Ferrari.')).toBeVisible({ timeout: 20_000 })
+  await page.getByRole('button', { name: 'Minimize' }).click()
+  await page.getByRole('button', { name: 'Stop transcription' }).click()
+  await expect(page.getByText('Enhancing notes…')).toBeVisible({ timeout: 15_000 })
+
+  // Leave while the model is still thinking, and come back before it has written anything.
+  await page.getByRole('button', { name: 'Back' }).click()
+  await page.waitForTimeout(800)
+  await page
+    .getByRole('button', { name: /New note/ })
+    .filter({ hasText: 'Me' })
+    .first()
+    .click()
+  await expect(page.getByText('Enhancing notes…')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Generate notes' })).toHaveCount(0)
+
+  await expect(page.getByText('Partnership with Airbus and Ferrari')).toBeVisible({ timeout: 15_000 })
+  await expect(page.getByPlaceholder('New note')).toHaveValue(GENERATED_TITLE)
+  // One generation, carried through: leaving and returning never restarted it.
+  expect(llm.requests.filter((r) => r.messages[0]!.content.includes('turn a user'))).toHaveLength(1)
 })

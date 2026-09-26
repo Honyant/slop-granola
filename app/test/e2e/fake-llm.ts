@@ -27,7 +27,11 @@ async function body(req: IncomingMessage): Promise<string> {
   return Buffer.concat(chunks).toString('utf8')
 }
 
-export async function startFakeLlm(): Promise<FakeLlm> {
+/**
+ * `thinkMs` streams reasoning (as vLLM's reasoning parser does: a separate `reasoning` field)
+ * before any answer text, like a thinking model; `pieceDelayMs` paces the answer.
+ */
+export async function startFakeLlm({ thinkMs = 0, pieceDelayMs = 5 }: { thinkMs?: number; pieceDelayMs?: number } = {}): Promise<FakeLlm> {
   const requests: FakeLlm['requests'] = []
   const server = createServer(async (req, res) => {
     if (req.method !== 'POST' || !req.url?.endsWith('/chat/completions')) {
@@ -38,10 +42,14 @@ export async function startFakeLlm(): Promise<FakeLlm> {
     requests.push(payload)
     const text = reply(payload.messages)
     res.writeHead(200, { 'Content-Type': 'text/event-stream' })
+    for (let t = 0; t < thinkMs; t += 200) {
+      res.write(`data: ${JSON.stringify({ choices: [{ delta: { reasoning: 'Considering the transcript. ' } }] })}\n\n`)
+      await new Promise((r) => setTimeout(r, 200))
+    }
     // Stream in small pieces, like a real model, to exercise incremental rendering.
     for (const piece of text.match(/.{1,12}/gs) ?? []) {
       res.write(`data: ${JSON.stringify({ choices: [{ delta: { content: piece } }] })}\n\n`)
-      await new Promise((r) => setTimeout(r, 5))
+      await new Promise((r) => setTimeout(r, pieceDelayMs))
     }
     res.end('data: [DONE]\n\n')
   })
